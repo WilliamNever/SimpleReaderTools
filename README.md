@@ -1,3 +1,3 @@
 # SimpleReaderTools
 
-Preview editions, all the main version are in master
+a small tool will be keeping adding daily used functionality

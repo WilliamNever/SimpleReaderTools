@@ -1,7 +1,7 @@
 ﻿
 namespace SimpleReaderTools.FunctionDataDialog
 {
-    partial class frmReplace
+    partial class FrmReplace
     {
         /// <summary>
         /// Required designer variable.

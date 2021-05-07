@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SimpleReaderTools.InterFace;
+using SimpleReaderTools.Utilities;
 
 namespace SimpleReaderTools.FunctionDataDialog
 {
@@ -85,7 +86,7 @@ namespace SimpleReaderTools.FunctionDataDialog
             string result = text;
             try
             {
-                result = Newtonsoft.Json.JsonConvert.SerializeObject(Newtonsoft.Json.JsonConvert.DeserializeObject(result), formatting);
+                result = JsonOperations.GetFormattedJson(result, formatting);
             }
             catch (Exception ex)
             {

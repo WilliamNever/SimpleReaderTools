@@ -9,13 +9,14 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SimpleReaderTools.InterFace;
+using SimpleReaderTools.Utilities;
 
 namespace SimpleReaderTools.FunctionDataDialog
 {
-    public partial class frmReplace : Form
+    public partial class FrmReplace : Form
     {
         private IFormFunctions _fFunction;
-        public frmReplace(IFormFunctions fFunction)
+        public FrmReplace(IFormFunctions fFunction)
         {
             _fFunction = fFunction;
             InitializeComponent();
@@ -34,32 +35,11 @@ namespace SimpleReaderTools.FunctionDataDialog
 
             if (regularEx)
             {
-                result = RegularReplace(result, find, replacement, mcase);
+                result = StringOperations.RegularReplace(result, find, replacement, mcase);
             }
             else
             {
-                result = CommonReplace(result, find, replacement, mcase);
-            }
-            return result;
-        }
-
-        private string RegularReplace(string text, string find, string replacement, bool mcase)
-        {
-            Regex reg = new Regex(find, mcase ? RegexOptions.None : RegexOptions.IgnoreCase);
-            return reg.Replace(text, replacement);
-        }
-
-        private string CommonReplace(string text, string find, string replacement, bool mcase)
-        {
-            string result = text;
-            var mcaseOption = mcase ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase;
-            int index = result?.IndexOf(find, mcaseOption) ?? -1;
-            string ReplacedString;
-            while (index > -1)
-            {
-                ReplacedString = $"{result.Substring(0, index)}{replacement}";
-                result = $"{ReplacedString}{result.Substring(index + find.Length)}";
-                index = result?.IndexOf(find, ReplacedString.Length, mcaseOption) ?? -1;
+                result = StringOperations.CommonReplace(result, find, replacement, mcase);
             }
             return result;
         }

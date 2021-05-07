@@ -175,27 +175,6 @@ namespace SimpleReaderTools
             }
         }
 
-        private void TSMIFile_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            CloseAllMenu();
-            switch (e.ClickedItem.Name)
-            {
-                case "TSMISave":
-                    Save();
-                    break;
-                case "TSMISaveAs":
-                    SaveAnother(false);
-                    break;
-                case "tsmiSaveUTF8":
-                    SaveAnother(true);
-                    break;
-                case "TSMIExit":
-                    Close();
-                    Application.Exit();
-                    break;
-            }
-        }
-
         private void CloseAllMenu()
         {
             foreach (var item in MainMenu.Items)
@@ -312,7 +291,28 @@ namespace SimpleReaderTools
                     SetDefaultFont();
                     break;
                 case "MNIReplace":
-                    new frmReplace(this).Show();
+                    new FrmReplace(this).Show();
+                    break;
+            }
+        }
+
+        private void TSMIFile_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            CloseAllMenu();
+            switch (e.ClickedItem.Name)
+            {
+                case "TSMISave":
+                    Save();
+                    break;
+                case "TSMISaveAs":
+                    SaveAnother(false);
+                    break;
+                case "tsmiSaveUTF8":
+                    SaveAnother(true);
+                    break;
+                case "TSMIExit":
+                    Close();
+                    Application.Exit();
                     break;
             }
         }

@@ -70,6 +70,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\JsonOperations.cs" />
+    <Compile Include="Utilities\StringOperations.cs" />
     <EmbeddedResource Include="FunctionDataDialog\FrmReplaceDialog.resx">
       <DependentUpon>FrmReplaceDialog.cs</DependentUpon>
     </EmbeddedResource>

@@ -25,8 +25,9 @@ namespace SimpleReaderTools.FunctionDataDialog
         private void btnReplace_Click(object sender, EventArgs e)
         {
             var contentsBox = _fFunction.GetContentsBox();
-            contentsBox.Text = Replace(contentsBox.Text, txtFind.Text, txtReplaceWith.Text
-                , cbkMatchCase.Checked, cbkRExpression.Checked);
+            if (!string.IsNullOrEmpty(txtFind.Text))
+                contentsBox.Text = Replace(contentsBox.Text, txtFind.Text, txtReplaceWith.Text
+                    , cbkMatchCase.Checked, cbkRExpression.Checked);
         }
 
         private string Replace(string text, string find, string replacement, bool mcase, bool regularEx)

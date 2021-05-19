@@ -107,6 +107,7 @@
             // 
             // btnClear
             // 
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClear.Location = new System.Drawing.Point(953, 70);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
@@ -211,13 +212,17 @@
             // tsmShowFormattedJson
             // 
             this.tsmShowFormattedJson.Name = "tsmShowFormattedJson";
-            this.tsmShowFormattedJson.Size = new System.Drawing.Size(256, 26);
+            this.tsmShowFormattedJson.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.J)));
+            this.tsmShowFormattedJson.Size = new System.Drawing.Size(338, 26);
             this.tsmShowFormattedJson.Text = "Show Formatted Json";
             // 
             // tsmShowNoFormattedJson
             // 
             this.tsmShowNoFormattedJson.Name = "tsmShowNoFormattedJson";
-            this.tsmShowNoFormattedJson.Size = new System.Drawing.Size(256, 26);
+            this.tsmShowNoFormattedJson.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.N)));
+            this.tsmShowNoFormattedJson.Size = new System.Drawing.Size(338, 26);
             this.tsmShowNoFormattedJson.Text = "Show No Formatted json";
             // 
             // FrmShowCharNumber

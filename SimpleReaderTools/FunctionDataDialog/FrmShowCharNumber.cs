@@ -82,6 +82,10 @@ namespace SimpleReaderTools.FunctionDataDialog
                 case "tsmShowNoFormattedJson":
                     txtMessageInformation.Text = GetFormattedJson(txtMessageInformation.Text, Newtonsoft.Json.Formatting.None);
                     break;
+
+                case "tsmCopyFromMain":
+                    txtMessageInformation.Text = _fFunction.GetContentsBox().Text;
+                    break;
             }
         }
 

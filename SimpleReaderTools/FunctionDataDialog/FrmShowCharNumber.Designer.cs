@@ -43,6 +43,8 @@
             this.btnMinMax = new System.Windows.Forms.Button();
             this.MSMainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiFunctions = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCopyFromMain = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmCopyToMain = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyClose = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAppToForm = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,8 +54,6 @@
             this.tsmiTools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowFormattedJson = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowNoFormattedJson = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmCopyFromMain = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain.SuspendLayout();
             this.grpFunctionality.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -117,6 +117,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnFontBig);
             this.panel1.Controls.Add(this.btnPickFont);
@@ -251,6 +252,19 @@
             this.tsmiFunctions.Text = "&Function";
             this.tsmiFunctions.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsmiFunctions_DropDownItemClicked);
             // 
+            // tsmCopyFromMain
+            // 
+            this.tsmCopyFromMain.Name = "tsmCopyFromMain";
+            this.tsmCopyFromMain.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.M)));
+            this.tsmCopyFromMain.Size = new System.Drawing.Size(319, 26);
+            this.tsmCopyFromMain.Text = "Copy From MainForm";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(316, 6);
+            // 
             // tsmCopyToMain
             // 
             this.tsmCopyToMain.Name = "tsmCopyToMain";
@@ -311,19 +325,6 @@
             | System.Windows.Forms.Keys.N)));
             this.tsmShowNoFormattedJson.Size = new System.Drawing.Size(338, 26);
             this.tsmShowNoFormattedJson.Text = "Show No Formatted json";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(316, 6);
-            // 
-            // tsmCopyFromMain
-            // 
-            this.tsmCopyFromMain.Name = "tsmCopyFromMain";
-            this.tsmCopyFromMain.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.M)));
-            this.tsmCopyFromMain.Size = new System.Drawing.Size(319, 26);
-            this.tsmCopyFromMain.Text = "Copy From MainForm";
             // 
             // FrmShowCharNumber
             // 

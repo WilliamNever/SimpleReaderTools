@@ -46,9 +46,16 @@
             this.tsmiTools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowFormattedJson = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowNoFormattedJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.chbAutoWrap = new System.Windows.Forms.CheckBox();
+            this.btnFontBig = new System.Windows.Forms.Button();
+            this.btnFontDefault = new System.Windows.Forms.Button();
+            this.btnFontSmall = new System.Windows.Forms.Button();
+            this.btnPickFont = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlMain.SuspendLayout();
             this.grpFunctionality.SuspendLayout();
             this.MSMainMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMessageInformation
@@ -67,7 +74,7 @@
             // 
             // btnShowCharNumber
             // 
-            this.btnShowCharNumber.Location = new System.Drawing.Point(8, 23);
+            this.btnShowCharNumber.Location = new System.Drawing.Point(8, 21);
             this.btnShowCharNumber.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowCharNumber.Name = "btnShowCharNumber";
             this.btnShowCharNumber.Size = new System.Drawing.Size(112, 28);
@@ -92,15 +99,16 @@
             // 
             this.grpFunctionality.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpFunctionality.Controls.Add(this.panel1);
             this.grpFunctionality.Controls.Add(this.btnClear);
             this.grpFunctionality.Controls.Add(this.btnGeneralNewGuid);
             this.grpFunctionality.Controls.Add(this.btnMinMax);
             this.grpFunctionality.Controls.Add(this.btnShowCharNumber);
-            this.grpFunctionality.Location = new System.Drawing.Point(16, 49);
+            this.grpFunctionality.Location = new System.Drawing.Point(16, 44);
             this.grpFunctionality.Margin = new System.Windows.Forms.Padding(4);
             this.grpFunctionality.Name = "grpFunctionality";
             this.grpFunctionality.Padding = new System.Windows.Forms.Padding(4);
-            this.grpFunctionality.Size = new System.Drawing.Size(1035, 100);
+            this.grpFunctionality.Size = new System.Drawing.Size(1035, 105);
             this.grpFunctionality.TabIndex = 1;
             this.grpFunctionality.TabStop = false;
             this.grpFunctionality.Text = "Functionality";
@@ -108,9 +116,9 @@
             // btnClear
             // 
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnClear.Location = new System.Drawing.Point(953, 70);
+            this.btnClear.Location = new System.Drawing.Point(688, 70);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(75, 28);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -118,7 +126,7 @@
             // 
             // btnGeneralNewGuid
             // 
-            this.btnGeneralNewGuid.Location = new System.Drawing.Point(138, 23);
+            this.btnGeneralNewGuid.Location = new System.Drawing.Point(264, 21);
             this.btnGeneralNewGuid.Name = "btnGeneralNewGuid";
             this.btnGeneralNewGuid.Size = new System.Drawing.Size(112, 28);
             this.btnGeneralNewGuid.TabIndex = 2;
@@ -128,7 +136,7 @@
             // 
             // btnMinMax
             // 
-            this.btnMinMax.Location = new System.Drawing.Point(8, 60);
+            this.btnMinMax.Location = new System.Drawing.Point(136, 21);
             this.btnMinMax.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinMax.Name = "btnMinMax";
             this.btnMinMax.Size = new System.Drawing.Size(112, 28);
@@ -225,6 +233,81 @@
             this.tsmShowNoFormattedJson.Size = new System.Drawing.Size(338, 26);
             this.tsmShowNoFormattedJson.Text = "Show No Formatted json";
             // 
+            // chbAutoWrap
+            // 
+            this.chbAutoWrap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbAutoWrap.AutoSize = true;
+            this.chbAutoWrap.Checked = true;
+            this.chbAutoWrap.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbAutoWrap.Location = new System.Drawing.Point(139, 51);
+            this.chbAutoWrap.Margin = new System.Windows.Forms.Padding(4);
+            this.chbAutoWrap.Name = "chbAutoWrap";
+            this.chbAutoWrap.Size = new System.Drawing.Size(93, 21);
+            this.chbAutoWrap.TabIndex = 14;
+            this.chbAutoWrap.Text = "AutoWrap";
+            this.chbAutoWrap.UseVisualStyleBackColor = true;
+            this.chbAutoWrap.CheckedChanged += new System.EventHandler(this.chbAutoWrap_CheckedChanged);
+            // 
+            // btnFontBig
+            // 
+            this.btnFontBig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFontBig.Location = new System.Drawing.Point(163, 11);
+            this.btnFontBig.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFontBig.Name = "btnFontBig";
+            this.btnFontBig.Size = new System.Drawing.Size(69, 28);
+            this.btnFontBig.TabIndex = 13;
+            this.btnFontBig.Text = ">>";
+            this.btnFontBig.UseVisualStyleBackColor = true;
+            this.btnFontBig.Click += new System.EventHandler(this.btnFontBig_Click);
+            // 
+            // btnFontDefault
+            // 
+            this.btnFontDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFontDefault.Location = new System.Drawing.Point(85, 11);
+            this.btnFontDefault.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFontDefault.Name = "btnFontDefault";
+            this.btnFontDefault.Size = new System.Drawing.Size(69, 28);
+            this.btnFontDefault.TabIndex = 12;
+            this.btnFontDefault.Text = "Default";
+            this.btnFontDefault.UseVisualStyleBackColor = true;
+            this.btnFontDefault.Click += new System.EventHandler(this.btnFontDefault_Click);
+            // 
+            // btnFontSmall
+            // 
+            this.btnFontSmall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFontSmall.Location = new System.Drawing.Point(8, 11);
+            this.btnFontSmall.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFontSmall.Name = "btnFontSmall";
+            this.btnFontSmall.Size = new System.Drawing.Size(69, 28);
+            this.btnFontSmall.TabIndex = 11;
+            this.btnFontSmall.Text = "<<";
+            this.btnFontSmall.UseVisualStyleBackColor = true;
+            this.btnFontSmall.Click += new System.EventHandler(this.btnFontSmall_Click);
+            // 
+            // btnPickFont
+            // 
+            this.btnPickFont.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPickFont.Location = new System.Drawing.Point(8, 46);
+            this.btnPickFont.Name = "btnPickFont";
+            this.btnPickFont.Size = new System.Drawing.Size(78, 28);
+            this.btnPickFont.TabIndex = 15;
+            this.btnPickFont.Text = "Font Pick";
+            this.btnPickFont.UseVisualStyleBackColor = true;
+            this.btnPickFont.Click += new System.EventHandler(this.btnPickFont_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnFontBig);
+            this.panel1.Controls.Add(this.btnPickFont);
+            this.panel1.Controls.Add(this.btnFontSmall);
+            this.panel1.Controls.Add(this.chbAutoWrap);
+            this.panel1.Controls.Add(this.btnFontDefault);
+            this.panel1.Location = new System.Drawing.Point(786, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(242, 83);
+            this.panel1.TabIndex = 16;
+            // 
             // FrmShowCharNumber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -240,6 +323,8 @@
             this.grpFunctionality.ResumeLayout(false);
             this.MSMainMenu.ResumeLayout(false);
             this.MSMainMenu.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -264,5 +349,11 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTools;
         private System.Windows.Forms.ToolStripMenuItem tsmShowFormattedJson;
         private System.Windows.Forms.ToolStripMenuItem tsmShowNoFormattedJson;
+        private System.Windows.Forms.CheckBox chbAutoWrap;
+        private System.Windows.Forms.Button btnFontBig;
+        private System.Windows.Forms.Button btnFontDefault;
+        private System.Windows.Forms.Button btnFontSmall;
+        private System.Windows.Forms.Button btnPickFont;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -10,16 +10,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SimpleReaderTools.InterFace;
 using SimpleReaderTools.Utilities;
+using SimpleReaderTools.BaseClasses;
 
 namespace SimpleReaderTools.FunctionDataDialog
 {
-    public partial class FrmShowCharNumber : Form
+    public partial class FrmShowCharNumber : FormBase
     {
         private IFormFunctions _fFunction;
         public FrmShowCharNumber(IFormFunctions fFunction)
         {
             _fFunction = fFunction;
             InitializeComponent();
+
+            SetDefaultFontForTxtContent(txtMessageInformation);
+            SetWrap(txtMessageInformation, chbAutoWrap.Checked);
         }
 
         private void btnShowCharNumber_Click(object sender, EventArgs e)
@@ -138,5 +142,34 @@ namespace SimpleReaderTools.FunctionDataDialog
         {
             txtMessageInformation.Text = "";
         }
+
+        #region Font pick Section
+        private void btnFontDefault_Click(object sender, EventArgs e)
+        {
+            SetDefaultFontForTxtContent(txtMessageInformation);
+        }
+
+        private void chbAutoWrap_CheckedChanged(object sender, EventArgs e)
+        {
+            SetWrap(txtMessageInformation, chbAutoWrap.Checked);
+        }
+
+        private void btnFontSmall_Click(object sender, EventArgs e)
+        {
+            var size = txtMessageInformation.Font.Size;
+            SetFontSizeInTextContent(--size, txtMessageInformation);
+        }
+
+        private void btnFontBig_Click(object sender, EventArgs e)
+        {
+            var size = txtMessageInformation.Font.Size;
+            SetFontSizeInTextContent(++size, txtMessageInformation);
+        }
+
+        private void btnPickFont_Click(object sender, EventArgs e)
+        {
+            SetDefaultFont(txtMessageInformation);
+        }
+        #endregion
     }
 }

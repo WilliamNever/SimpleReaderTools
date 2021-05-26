@@ -82,11 +82,28 @@ namespace SimpleReaderTools.FunctionDataDialog
                 case "tsmShowNoFormattedJson":
                     txtMessageInformation.Text = GetFormattedJson(txtMessageInformation.Text, Newtonsoft.Json.Formatting.None);
                     break;
+                case "tsmOrderJsonProperties":
+                    txtMessageInformation.Text = FormatJsonProperties(txtMessageInformation.Text, Newtonsoft.Json.Formatting.Indented);
+                    break;
 
                 case "tsmCopyFromMain":
                     txtMessageInformation.Text = _fFunction.GetContentsBox().Text;
                     break;
             }
+        }
+
+        private string FormatJsonProperties(string text, Formatting formatting)
+        {
+            string result = text;
+            try
+            {
+                result = JsonOperations.JsonPropertiesOrder(result, formatting);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "Json Convert Error ...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return result;
         }
 
         private string GetFormattedJson(string text, Formatting formatting)

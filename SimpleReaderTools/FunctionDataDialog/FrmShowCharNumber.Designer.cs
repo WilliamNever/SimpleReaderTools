@@ -54,6 +54,7 @@
             this.tsmiTools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowFormattedJson = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowNoFormattedJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmOrderJsonProperties = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain.SuspendLayout();
             this.grpFunctionality.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -304,7 +305,8 @@
             // 
             this.tsmiTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmShowFormattedJson,
-            this.tsmShowNoFormattedJson});
+            this.tsmShowNoFormattedJson,
+            this.tsmOrderJsonProperties});
             this.tsmiTools.Name = "tsmiTools";
             this.tsmiTools.Size = new System.Drawing.Size(58, 24);
             this.tsmiTools.Text = "&Tools";
@@ -325,6 +327,12 @@
             | System.Windows.Forms.Keys.N)));
             this.tsmShowNoFormattedJson.Size = new System.Drawing.Size(338, 26);
             this.tsmShowNoFormattedJson.Text = "Show No Formatted json";
+            // 
+            // tsmOrderJsonProperties
+            // 
+            this.tsmOrderJsonProperties.Name = "tsmOrderJsonProperties";
+            this.tsmOrderJsonProperties.Size = new System.Drawing.Size(338, 26);
+            this.tsmOrderJsonProperties.Text = "Order Json Properties";
             // 
             // FrmShowCharNumber
             // 
@@ -375,5 +383,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem tsmCopyFromMain;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem tsmOrderJsonProperties;
     }
 }

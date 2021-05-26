@@ -55,6 +55,10 @@
             this.tsmShowFormattedJson = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowNoFormattedJson = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmOrderJsonProperties = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmShowFormattedXml = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmShowNoFormattedXml = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmOrderXmlNodes = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain.SuspendLayout();
             this.grpFunctionality.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -306,7 +310,11 @@
             this.tsmiTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmShowFormattedJson,
             this.tsmShowNoFormattedJson,
-            this.tsmOrderJsonProperties});
+            this.tsmOrderJsonProperties,
+            this.toolStripSeparator3,
+            this.tsmShowFormattedXml,
+            this.tsmShowNoFormattedXml,
+            this.tsmOrderXmlNodes});
             this.tsmiTools.Name = "tsmiTools";
             this.tsmiTools.Size = new System.Drawing.Size(58, 24);
             this.tsmiTools.Text = "&Tools";
@@ -333,6 +341,31 @@
             this.tsmOrderJsonProperties.Name = "tsmOrderJsonProperties";
             this.tsmOrderJsonProperties.Size = new System.Drawing.Size(338, 26);
             this.tsmOrderJsonProperties.Text = "Order Json Properties";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(335, 6);
+            // 
+            // tsmShowFormattedXml
+            // 
+            this.tsmShowFormattedXml.Name = "tsmShowFormattedXml";
+            this.tsmShowFormattedXml.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.X)));
+            this.tsmShowFormattedXml.Size = new System.Drawing.Size(338, 26);
+            this.tsmShowFormattedXml.Text = "Show Formatted Xml";
+            // 
+            // tsmShowNoFormattedXml
+            // 
+            this.tsmShowNoFormattedXml.Name = "tsmShowNoFormattedXml";
+            this.tsmShowNoFormattedXml.Size = new System.Drawing.Size(338, 26);
+            this.tsmShowNoFormattedXml.Text = "Show No Formatted Xml";
+            // 
+            // tsmOrderXmlNodes
+            // 
+            this.tsmOrderXmlNodes.Name = "tsmOrderXmlNodes";
+            this.tsmOrderXmlNodes.Size = new System.Drawing.Size(338, 26);
+            this.tsmOrderXmlNodes.Text = "Order Xml Nodes";
             // 
             // FrmShowCharNumber
             // 
@@ -384,5 +417,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmCopyFromMain;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem tsmOrderJsonProperties;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem tsmShowFormattedXml;
+        private System.Windows.Forms.ToolStripMenuItem tsmShowNoFormattedXml;
+        private System.Windows.Forms.ToolStripMenuItem tsmOrderXmlNodes;
     }
 }

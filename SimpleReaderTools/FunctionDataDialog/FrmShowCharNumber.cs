@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using SimpleReaderTools.InterFace;
 using SimpleReaderTools.Utilities;
 using SimpleReaderTools.BaseClasses;
+using SimpleReaderTools.Enums;
 
 namespace SimpleReaderTools.FunctionDataDialog
 {
@@ -77,13 +78,23 @@ namespace SimpleReaderTools.FunctionDataDialog
                     break;
 
                 case "tsmShowFormattedJson":
-                    txtMessageInformation.Text = GetFormattedJson(txtMessageInformation.Text, Newtonsoft.Json.Formatting.Indented);
+                    txtMessageInformation.Text = GetFormattedString(txtMessageInformation.Text, EnStringType.Json, true);
                     break;
                 case "tsmShowNoFormattedJson":
-                    txtMessageInformation.Text = GetFormattedJson(txtMessageInformation.Text, Newtonsoft.Json.Formatting.None);
+                    txtMessageInformation.Text = GetFormattedString(txtMessageInformation.Text, EnStringType.Json, false);
                     break;
                 case "tsmOrderJsonProperties":
-                    txtMessageInformation.Text = FormatJsonProperties(txtMessageInformation.Text, Newtonsoft.Json.Formatting.Indented);
+                    txtMessageInformation.Text = OrderByFormatStringProperties(txtMessageInformation.Text, EnStringType.Json, true);
+                    break;
+
+                case "tsmShowFormattedXml":
+                    txtMessageInformation.Text = GetFormattedString(txtMessageInformation.Text, EnStringType.Xml, true);
+                    break;
+                case "tsmShowNoFormattedXml":
+                    txtMessageInformation.Text = GetFormattedString(txtMessageInformation.Text, EnStringType.Xml, false);
+                    break;
+                case "tsmOrderXmlNodes":
+                    txtMessageInformation.Text = OrderByFormatStringProperties(txtMessageInformation.Text, EnStringType.Xml, true);
                     break;
 
                 case "tsmCopyFromMain":
@@ -92,30 +103,46 @@ namespace SimpleReaderTools.FunctionDataDialog
             }
         }
 
-        private string FormatJsonProperties(string text, Formatting formatting)
+        private string OrderByFormatStringProperties(string text, EnStringType stringType, bool isFormatted)
         {
             string result = text;
             try
             {
-                result = JsonOperations.JsonPropertiesOrder(result, formatting);
+                switch (stringType)
+                {
+                    case EnStringType.Json:
+                        result = JsonOperations.JsonPropertiesOrder(result, isFormatted ? Formatting.Indented : Formatting.None);
+                        break;
+                    case EnStringType.Xml:
+                        result = XMLOperations.GetOrderedNodesXmlString(result, isFormatted);
+                        break;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, ex.Message, "Json Convert Error ...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, ex.Message, $"{stringType} Convert Error ...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return result;
         }
 
-        private string GetFormattedJson(string text, Formatting formatting)
+        private string GetFormattedString(string text, EnStringType stringType, bool isFormatted)
         {
             string result = text;
             try
             {
-                result = JsonOperations.GetFormattedJson(result, formatting);
+                switch (stringType)
+                {
+                    case EnStringType.Json:
+                        result = JsonOperations.GetFormattedJson(result, isFormatted ? Formatting.Indented : Formatting.None);
+                        break;
+                    case EnStringType.Xml:
+                        result = XMLOperations.GetXmlString(result, isFormatted);
+                        break;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, ex.Message, "Json Convert Error ...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, ex.Message, $"{stringType} Convert Error ...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return result;
         }

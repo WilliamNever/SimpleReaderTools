@@ -46,6 +46,7 @@
             this.MNISelectALL = new System.Windows.Forms.ToolStripMenuItem();
             this.MNICopy = new System.Windows.Forms.ToolStripMenuItem();
             this.MNIPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this.MNIReplace = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MNITrim = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIToolsWindows = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,6 @@
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.MNIReplace = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDeployment.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +84,7 @@
             this.pnlDeployment.Controls.Add(this.label1);
             this.pnlDeployment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDeployment.Location = new System.Drawing.Point(0, 0);
-            this.pnlDeployment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDeployment.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDeployment.Name = "pnlDeployment";
             this.pnlDeployment.Size = new System.Drawing.Size(1067, 594);
             this.pnlDeployment.TabIndex = 0;
@@ -93,7 +93,7 @@
             // 
             this.btnPaste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPaste.Location = new System.Drawing.Point(797, 89);
-            this.btnPaste.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPaste.Margin = new System.Windows.Forms.Padding(4);
             this.btnPaste.Name = "btnPaste";
             this.btnPaste.Size = new System.Drawing.Size(115, 28);
             this.btnPaste.TabIndex = 14;
@@ -105,7 +105,7 @@
             // 
             this.BtnCopySel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCopySel.Location = new System.Drawing.Point(680, 89);
-            this.BtnCopySel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCopySel.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCopySel.Name = "BtnCopySel";
             this.BtnCopySel.Size = new System.Drawing.Size(115, 28);
             this.BtnCopySel.TabIndex = 13;
@@ -117,7 +117,7 @@
             // 
             this.btnSelALL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelALL.Location = new System.Drawing.Point(597, 89);
-            this.btnSelALL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelALL.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelALL.Name = "btnSelALL";
             this.btnSelALL.Size = new System.Drawing.Size(80, 28);
             this.btnSelALL.TabIndex = 12;
@@ -132,7 +132,7 @@
             this.chbAutoWrap.Checked = true;
             this.chbAutoWrap.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbAutoWrap.Location = new System.Drawing.Point(255, 94);
-            this.chbAutoWrap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chbAutoWrap.Margin = new System.Windows.Forms.Padding(4);
             this.chbAutoWrap.Name = "chbAutoWrap";
             this.chbAutoWrap.Size = new System.Drawing.Size(93, 21);
             this.chbAutoWrap.TabIndex = 10;
@@ -246,6 +246,13 @@
             this.MNIPaste.Size = new System.Drawing.Size(242, 26);
             this.MNIPaste.Text = "&Paste";
             // 
+            // MNIReplace
+            // 
+            this.MNIReplace.Name = "MNIReplace";
+            this.MNIReplace.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.MNIReplace.Size = new System.Drawing.Size(242, 26);
+            this.MNIReplace.Text = "&Replace ...";
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -270,14 +277,15 @@
             // MNIShowCharNumber
             // 
             this.MNIShowCharNumber.Name = "MNIShowCharNumber";
-            this.MNIShowCharNumber.Size = new System.Drawing.Size(220, 26);
+            this.MNIShowCharNumber.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.MNIShowCharNumber.Size = new System.Drawing.Size(273, 26);
             this.MNIShowCharNumber.Text = "Show Char Number";
             // 
             // btnFontBig
             // 
             this.btnFontBig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFontBig.Location = new System.Drawing.Point(507, 89);
-            this.btnFontBig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFontBig.Margin = new System.Windows.Forms.Padding(4);
             this.btnFontBig.Name = "btnFontBig";
             this.btnFontBig.Size = new System.Drawing.Size(69, 28);
             this.btnFontBig.TabIndex = 9;
@@ -289,7 +297,7 @@
             // 
             this.btnFontDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFontDefault.Location = new System.Drawing.Point(429, 89);
-            this.btnFontDefault.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFontDefault.Margin = new System.Windows.Forms.Padding(4);
             this.btnFontDefault.Name = "btnFontDefault";
             this.btnFontDefault.Size = new System.Drawing.Size(69, 28);
             this.btnFontDefault.TabIndex = 8;
@@ -301,7 +309,7 @@
             // 
             this.btnFontSmall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFontSmall.Location = new System.Drawing.Point(352, 89);
-            this.btnFontSmall.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFontSmall.Margin = new System.Windows.Forms.Padding(4);
             this.btnFontSmall.Name = "btnFontSmall";
             this.btnFontSmall.Size = new System.Drawing.Size(69, 28);
             this.btnFontSmall.TabIndex = 7;
@@ -313,7 +321,7 @@
             // 
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.Location = new System.Drawing.Point(951, 89);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
             this.btnClear.TabIndex = 6;
@@ -325,7 +333,7 @@
             // 
             this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBrowse.Location = new System.Drawing.Point(799, 43);
-            this.btnBrowse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(100, 28);
             this.btnBrowse.TabIndex = 5;
@@ -338,7 +346,7 @@
             this.btnOpen.AllowDrop = true;
             this.btnOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOpen.Location = new System.Drawing.Point(951, 43);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(100, 28);
             this.btnOpen.TabIndex = 4;
@@ -354,7 +362,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtContents.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContents.Location = new System.Drawing.Point(16, 124);
-            this.txtContents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContents.Margin = new System.Windows.Forms.Padding(4);
             this.txtContents.MaxLength = 0;
             this.txtContents.Multiline = true;
             this.txtContents.Name = "txtContents";
@@ -370,7 +378,7 @@
             this.txtPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPath.Location = new System.Drawing.Point(72, 44);
-            this.txtPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPath.Margin = new System.Windows.Forms.Padding(4);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(716, 22);
             this.txtPath.TabIndex = 2;
@@ -397,20 +405,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Path:";
             // 
-            // MNIReplace
-            // 
-            this.MNIReplace.Name = "MNIReplace";
-            this.MNIReplace.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.MNIReplace.Size = new System.Drawing.Size(242, 26);
-            this.MNIReplace.Text = "&Replace ...";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 594);
             this.Controls.Add(this.pnlDeployment);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Main Form";
             this.Load += new System.EventHandler(this.MainForm_Load);

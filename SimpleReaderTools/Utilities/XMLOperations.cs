@@ -18,10 +18,11 @@ namespace SimpleReaderTools.Utilities
         public static string GetOrderedNodesXmlString(string xml, bool isFormat)
         {
             var doc = GetXmlDoc(xml);
-            var list = SortXmlNodes(doc.ChildNodes);
-            foreach (var nd in list)
+            if (doc.DocumentElement.HasChildNodes)
             {
-                doc.AppendChild(nd);
+                var list = SortXmlNodes(doc.DocumentElement.ChildNodes);
+                foreach (var nd in list)
+                    doc.DocumentElement.AppendChild(nd);
             }
 
             return GetXmlFormatString(doc, isFormat);
@@ -37,9 +38,7 @@ namespace SimpleReaderTools.Utilities
                 {
                     var childList = SortXmlNodes(node.ChildNodes);
                     foreach (var cnodel in childList)
-                    {
                         node.AppendChild(cnodel);
-                    }
                 }
                 nodes.Add(node);
             }

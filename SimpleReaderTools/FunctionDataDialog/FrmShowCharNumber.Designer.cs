@@ -376,7 +376,7 @@
             this.MainMenuStrip = this.MSMainMenu;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmShowCharNumber";
-            this.Text = "FrmShowCharNumber";
+            this.Text = "Const Tools Windows";
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             this.grpFunctionality.ResumeLayout(false);

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SimpleReaderTools.FunctionDataDialog;
 using SimpleReaderTools.InterFace;
+using SimpleReaderTools.Models;
 
 namespace SimpleReaderTools
 {
@@ -21,8 +22,10 @@ namespace SimpleReaderTools
         private string SavedFilePath = "";
         private bool IsUseUtf8 = false;
         private Font defaultFont;
+        private WindowsDefinitions Windows;
         public MainForm()
         {
+            Windows = new WindowsDefinitions();
             InitializeComponent();
         }
 
@@ -110,6 +113,8 @@ namespace SimpleReaderTools
             txtContents.Text = "";
             SavedFilePath = "";
             Text = $"{MainFormTitle}";
+            tssWinLabel.Text = "";
+            tssWorkingLabel.Text = "";
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -169,8 +174,12 @@ namespace SimpleReaderTools
             switch (e.ClickedItem.Name)
             {
                 case "MNIShowCharNumber":
-                    FrmShowCharNumber frm = new FrmShowCharNumber(this);
-                    frm.Show();
+                    lock (Windows)
+                    {
+                        FrmShowCharNumber frm = new FrmShowCharNumber(this, Windows.WindowNum.ToString());
+                        Windows.WindowNum++;
+                        frm.Show();
+                    }
                     break;
             }
         }
@@ -185,16 +194,6 @@ namespace SimpleReaderTools
                 }
             }
         }
-
-        void IFormFunctions.CopyTextToForm(string txt, bool isAppend)
-        {
-            if (isAppend)
-                txtContents.Text += txt;
-            else
-                txtContents.Text = txt;
-        }
-
-
 
         #region Save to file
 
@@ -343,9 +342,25 @@ namespace SimpleReaderTools
             return string.Join(breakStr, lines);
         }
 
+        #region IFormFunction Interface Implemented
+        void IFormFunctions.CopyTextToForm(string txt, bool isAppend, string winName)
+        {
+            if (isAppend)
+                txtContents.Text += txt;
+            else
+                txtContents.Text = txt;
+
+            var working = isAppend ? "Append" : "Override";
+            tssWinLabel.Text =$"{working} from - {winName}";
+        }
         TextBox IFormFunctions.GetContentsBox()
         {
             return txtContents;
         }
+        ToolStripStatusLabel IFormFunctions.GetWinWorkingStatus()
+        {
+            return tssWorkingLabel;
+        }
+        #endregion
     }
 }

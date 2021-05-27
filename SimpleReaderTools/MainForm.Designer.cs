@@ -61,12 +61,19 @@
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.sstStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.tssWinLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssWorkingLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.pnlDeployment.SuspendLayout();
             this.MainMenu.SuspendLayout();
+            this.sstStatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDeployment
             // 
+            this.pnlDeployment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDeployment.Controls.Add(this.btnPaste);
             this.pnlDeployment.Controls.Add(this.BtnCopySel);
             this.pnlDeployment.Controls.Add(this.btnSelALL);
@@ -82,11 +89,10 @@
             this.pnlDeployment.Controls.Add(this.txtPath);
             this.pnlDeployment.Controls.Add(this.label2);
             this.pnlDeployment.Controls.Add(this.label1);
-            this.pnlDeployment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDeployment.Location = new System.Drawing.Point(0, 0);
             this.pnlDeployment.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDeployment.Name = "pnlDeployment";
-            this.pnlDeployment.Size = new System.Drawing.Size(1067, 594);
+            this.pnlDeployment.Size = new System.Drawing.Size(1067, 605);
             this.pnlDeployment.TabIndex = 0;
             // 
             // btnPaste
@@ -367,7 +373,7 @@
             this.txtContents.Multiline = true;
             this.txtContents.Name = "txtContents";
             this.txtContents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtContents.Size = new System.Drawing.Size(1033, 454);
+            this.txtContents.Size = new System.Drawing.Size(1033, 465);
             this.txtContents.TabIndex = 3;
             this.txtContents.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtContents_DragDrop);
             this.txtContents.DragEnter += new System.Windows.Forms.DragEventHandler(this.txtContents_DragEnter);
@@ -405,11 +411,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Path:";
             // 
+            // sstStatusStrip
+            // 
+            this.sstStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.sstStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssWinLabel,
+            this.tssWorkingLabel});
+            this.sstStatusStrip.Location = new System.Drawing.Point(0, 611);
+            this.sstStatusStrip.Name = "sstStatusStrip";
+            this.sstStatusStrip.Size = new System.Drawing.Size(1067, 24);
+            this.sstStatusStrip.TabIndex = 1;
+            // 
+            // tssWinLabel
+            // 
+            this.tssWinLabel.Name = "tssWinLabel";
+            this.tssWinLabel.Size = new System.Drawing.Size(0, 18);
+            // 
+            // tssWorkingLabel
+            // 
+            this.tssWorkingLabel.Name = "tssWorkingLabel";
+            this.tssWorkingLabel.Size = new System.Drawing.Size(0, 18);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 594);
+            this.ClientSize = new System.Drawing.Size(1067, 635);
+            this.Controls.Add(this.sstStatusStrip);
             this.Controls.Add(this.pnlDeployment);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
@@ -419,7 +447,10 @@
             this.pnlDeployment.PerformLayout();
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
+            this.sstStatusStrip.ResumeLayout(false);
+            this.sstStatusStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -458,6 +489,9 @@
         private System.Windows.Forms.ToolStripMenuItem MNIFontSelect;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem MNIReplace;
+        private System.Windows.Forms.StatusStrip sstStatusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel tssWinLabel;
+        private System.Windows.Forms.ToolStripStatusLabel tssWorkingLabel;
     }
 }
 

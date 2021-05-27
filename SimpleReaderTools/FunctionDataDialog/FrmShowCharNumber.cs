@@ -18,11 +18,13 @@ namespace SimpleReaderTools.FunctionDataDialog
     public partial class FrmShowCharNumber : FormBase
     {
         private IFormFunctions _fFunction;
-        public FrmShowCharNumber(IFormFunctions fFunction)
+        private string WindowName;
+        public FrmShowCharNumber(IFormFunctions fFunction, string winName)
         {
+            WindowName = winName;
             _fFunction = fFunction;
             InitializeComponent();
-
+            Text = $"{Text} - [{WindowName}]";
             SetDefaultFontForTxtContent(txtMessageInformation);
             SetWrap(txtMessageInformation, chbAutoWrap.Checked);
         }
@@ -60,17 +62,17 @@ namespace SimpleReaderTools.FunctionDataDialog
             switch (e.ClickedItem.Name)
             {
                 case "tsmCopyToMain":
-                    _fFunction.CopyTextToForm(txtMessageInformation.Text, false);
+                    _fFunction.CopyTextToForm(txtMessageInformation.Text, false, Text);
                     break;
                 case "tsmiCopyClose":
-                    _fFunction.CopyTextToForm(txtMessageInformation.Text, false);
+                    _fFunction.CopyTextToForm(txtMessageInformation.Text, false, Text);
                     Close();
                     break;
                 case "tsmAppToForm":
-                    _fFunction.CopyTextToForm(txtMessageInformation.Text, true);
+                    _fFunction.CopyTextToForm(txtMessageInformation.Text, true, Text);
                     break;
                 case "tsmAppAndClose":
-                    _fFunction.CopyTextToForm(txtMessageInformation.Text, true);
+                    _fFunction.CopyTextToForm(txtMessageInformation.Text, true, Text);
                     Close();
                     break;
                 case "tsmClose":

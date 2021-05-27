@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using SimpleReaderTools.Core.InterFace;
+using SimpleReaderTools.Core.Models;
+using SimpleReaderTools.FunctionDataDialog;
+using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SimpleReaderTools.FunctionDataDialog;
-using SimpleReaderTools.InterFace;
-using SimpleReaderTools.Models;
 
 namespace SimpleReaderTools
 {

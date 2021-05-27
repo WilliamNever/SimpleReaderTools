@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleReaderTools.Utilities
+namespace SimpleReaderTools.Core.Utilities
 {
     public class JsonOperations
     {

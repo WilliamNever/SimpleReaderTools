@@ -64,6 +64,7 @@
             this.sstStatusStrip = new System.Windows.Forms.StatusStrip();
             this.tssWinLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssWorkingLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssSplitLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.pnlDeployment.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.sstStatusStrip.SuspendLayout();
@@ -416,21 +417,28 @@
             this.sstStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.sstStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssWinLabel,
+            this.tssSplitLabel,
             this.tssWorkingLabel});
-            this.sstStatusStrip.Location = new System.Drawing.Point(0, 611);
+            this.sstStatusStrip.Location = new System.Drawing.Point(0, 609);
             this.sstStatusStrip.Name = "sstStatusStrip";
-            this.sstStatusStrip.Size = new System.Drawing.Size(1067, 24);
+            this.sstStatusStrip.Size = new System.Drawing.Size(1067, 26);
             this.sstStatusStrip.TabIndex = 1;
             // 
             // tssWinLabel
             // 
             this.tssWinLabel.Name = "tssWinLabel";
-            this.tssWinLabel.Size = new System.Drawing.Size(0, 18);
+            this.tssWinLabel.Size = new System.Drawing.Size(0, 20);
             // 
             // tssWorkingLabel
             // 
             this.tssWorkingLabel.Name = "tssWorkingLabel";
-            this.tssWorkingLabel.Size = new System.Drawing.Size(0, 18);
+            this.tssWorkingLabel.Size = new System.Drawing.Size(0, 20);
+            // 
+            // tssSplitLabel
+            // 
+            this.tssSplitLabel.Name = "tssSplitLabel";
+            this.tssSplitLabel.Size = new System.Drawing.Size(15, 20);
+            this.tssSplitLabel.Text = "-";
             // 
             // MainForm
             // 
@@ -492,6 +500,7 @@
         private System.Windows.Forms.StatusStrip sstStatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel tssWinLabel;
         private System.Windows.Forms.ToolStripStatusLabel tssWorkingLabel;
+        private System.Windows.Forms.ToolStripStatusLabel tssSplitLabel;
     }
 }
 

@@ -1,17 +1,10 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SimpleReaderTools.InterFace;
-using SimpleReaderTools.Utilities;
 using SimpleReaderTools.BaseClasses;
-using SimpleReaderTools.Enums;
+using SimpleReaderTools.Core.Enums;
+using SimpleReaderTools.Core.InterFace;
+using SimpleReaderTools.Core.Utilities;
+using System;
+using System.Windows.Forms;
 
 namespace SimpleReaderTools.FunctionDataDialog
 {
@@ -24,7 +17,7 @@ namespace SimpleReaderTools.FunctionDataDialog
             WindowName = winName;
             _fFunction = fFunction;
             InitializeComponent();
-            Text = $"{Text} - [{WindowName}]";
+            Text = $"{Text}[{WindowName}]";
             SetDefaultFontForTxtContent(txtMessageInformation);
             SetWrap(txtMessageInformation, chbAutoWrap.Checked);
         }

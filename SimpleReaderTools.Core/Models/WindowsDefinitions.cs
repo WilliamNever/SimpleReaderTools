@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleReaderTools.Enums
+namespace SimpleReaderTools.Core.Models
 {
-    public enum EnStringType
+    public class WindowsDefinitions
     {
-        None = 0,
-        Json = 1,
-        Xml = 2,
+        public int WindowNum { get; set; } = 1;
     }
 }

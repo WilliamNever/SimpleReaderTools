@@ -11,17 +11,17 @@ namespace TestProject
         {
             string xml = GetXml();
 
-            var str = SimpleReaderTools.Utilities.XMLOperations.GetXmlString(xml, true);
-            var str1 = SimpleReaderTools.Utilities.XMLOperations.GetXmlString(xml, false);
+            var str = SimpleReaderTools.Core.Utilities.XMLOperations.GetXmlString(xml, true);
+            var str1 = SimpleReaderTools.Core.Utilities.XMLOperations.GetXmlString(xml, false);
         }
 
         [TestMethod]
         public void SortXmlNodesTest()
         {
             string xml = GetXml();
-            var str = SimpleReaderTools.Utilities.XMLOperations.GetOrderedNodesXmlString(xml, true);
-            var str1 = SimpleReaderTools.Utilities.XMLOperations.GetXmlString(xml, true);
-            var str2 = SimpleReaderTools.Utilities.XMLOperations.GetOrderedNodesXmlString(xml, false);
+            var str = SimpleReaderTools.Core.Utilities.XMLOperations.GetOrderedNodesXmlString(xml, true);
+            var str1 = SimpleReaderTools.Core.Utilities.XMLOperations.GetXmlString(xml, true);
+            var str2 = SimpleReaderTools.Core.Utilities.XMLOperations.GetOrderedNodesXmlString(xml, false);
         }
 
         private string GetXml()

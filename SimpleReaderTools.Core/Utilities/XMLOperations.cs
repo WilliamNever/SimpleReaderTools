@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace SimpleReaderTools.Utilities
+namespace SimpleReaderTools.Core.Utilities
 {
     public class XMLOperations
     {

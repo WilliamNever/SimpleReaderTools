@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace SimpleReaderTools.Utilities
+namespace SimpleReaderTools.Core.Utilities
 {
     public class StringOperations
     {

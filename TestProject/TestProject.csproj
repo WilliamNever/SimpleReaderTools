@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimpleReaderTools.Core\SimpleReaderTools.Core.csproj">
+      <Project>{ff201f90-684f-42ba-b4ca-1e38fa58470e}</Project>
+      <Name>SimpleReaderTools.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimpleReaderTools\SimpleReaderTools.csproj">
       <Project>{9dd58e46-90e4-4ee4-9ea7-3f1b6c63b509}</Project>
       <Name>SimpleReaderTools</Name>

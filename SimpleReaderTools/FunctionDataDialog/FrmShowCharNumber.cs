@@ -1,25 +1,25 @@
 ﻿using Newtonsoft.Json;
+using SimpleReaderTools.BaseClasses;
+using SimpleReaderTools.Core.Enums;
+using SimpleReaderTools.Core.InterFace;
+using SimpleReaderTools.Core.Utilities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SimpleReaderTools.InterFace;
-using SimpleReaderTools.Utilities;
 
 namespace SimpleReaderTools.FunctionDataDialog
 {
-    public partial class FrmShowCharNumber : Form
+    public partial class FrmShowCharNumber : FormBase
     {
         private IFormFunctions _fFunction;
-        public FrmShowCharNumber(IFormFunctions fFunction)
+        private string WindowName;
+        public FrmShowCharNumber(IFormFunctions fFunction, string winName)
         {
+            WindowName = winName;
             _fFunction = fFunction;
             InitializeComponent();
+            Text = $"{Text}[{WindowName}]";
+            SetDefaultFontForTxtContent(txtMessageInformation);
+            SetWrap(txtMessageInformation, chbAutoWrap.Checked);
         }
 
         private void btnShowCharNumber_Click(object sender, EventArgs e)
@@ -55,17 +55,17 @@ namespace SimpleReaderTools.FunctionDataDialog
             switch (e.ClickedItem.Name)
             {
                 case "tsmCopyToMain":
-                    _fFunction.CopyTextToForm(txtMessageInformation.Text, false);
+                    _fFunction.CopyTextToForm(txtMessageInformation.Text, false, Text);
                     break;
                 case "tsmiCopyClose":
-                    _fFunction.CopyTextToForm(txtMessageInformation.Text, false);
+                    _fFunction.CopyTextToForm(txtMessageInformation.Text, false, Text);
                     Close();
                     break;
                 case "tsmAppToForm":
-                    _fFunction.CopyTextToForm(txtMessageInformation.Text, true);
+                    _fFunction.CopyTextToForm(txtMessageInformation.Text, true, Text);
                     break;
                 case "tsmAppAndClose":
-                    _fFunction.CopyTextToForm(txtMessageInformation.Text, true);
+                    _fFunction.CopyTextToForm(txtMessageInformation.Text, true, Text);
                     Close();
                     break;
                 case "tsmClose":
@@ -73,24 +73,71 @@ namespace SimpleReaderTools.FunctionDataDialog
                     break;
 
                 case "tsmShowFormattedJson":
-                    txtMessageInformation.Text = GetFormattedJson(txtMessageInformation.Text, Newtonsoft.Json.Formatting.Indented);
+                    txtMessageInformation.Text = GetFormattedString(txtMessageInformation.Text, EnStringType.Json, true);
                     break;
                 case "tsmShowNoFormattedJson":
-                    txtMessageInformation.Text = GetFormattedJson(txtMessageInformation.Text, Newtonsoft.Json.Formatting.None);
+                    txtMessageInformation.Text = GetFormattedString(txtMessageInformation.Text, EnStringType.Json, false);
+                    break;
+                case "tsmOrderJsonProperties":
+                    txtMessageInformation.Text = OrderByFormatStringProperties(txtMessageInformation.Text, EnStringType.Json, true);
+                    break;
+
+                case "tsmShowFormattedXml":
+                    txtMessageInformation.Text = GetFormattedString(txtMessageInformation.Text, EnStringType.Xml, true);
+                    break;
+                case "tsmShowNoFormattedXml":
+                    txtMessageInformation.Text = GetFormattedString(txtMessageInformation.Text, EnStringType.Xml, false);
+                    break;
+                case "tsmOrderXmlNodes":
+                    txtMessageInformation.Text = OrderByFormatStringProperties(txtMessageInformation.Text, EnStringType.Xml, true);
+                    break;
+
+                case "tsmCopyFromMain":
+                    txtMessageInformation.Text = _fFunction.GetContentsBox().Text;
                     break;
             }
         }
 
-        private string GetFormattedJson(string text, Formatting formatting)
+        private string OrderByFormatStringProperties(string text, EnStringType stringType, bool isFormatted)
         {
             string result = text;
             try
             {
-                result = JsonOperations.GetFormattedJson(result, formatting);
+                switch (stringType)
+                {
+                    case EnStringType.Json:
+                        result = JsonOperations.JsonPropertiesOrder(result, isFormatted ? Formatting.Indented : Formatting.None);
+                        break;
+                    case EnStringType.Xml:
+                        result = XMLOperations.GetOrderedNodesXmlString(result, isFormatted);
+                        break;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, ex.Message, "Json Convert Error ...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, ex.Message, $"{stringType} Convert Error ...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return result;
+        }
+
+        private string GetFormattedString(string text, EnStringType stringType, bool isFormatted)
+        {
+            string result = text;
+            try
+            {
+                switch (stringType)
+                {
+                    case EnStringType.Json:
+                        result = JsonOperations.GetFormattedJson(result, isFormatted ? Formatting.Indented : Formatting.None);
+                        break;
+                    case EnStringType.Xml:
+                        result = XMLOperations.GetXmlString(result, isFormatted);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, $"{stringType} Convert Error ...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return result;
         }
@@ -138,5 +185,34 @@ namespace SimpleReaderTools.FunctionDataDialog
         {
             txtMessageInformation.Text = "";
         }
+
+        #region Font pick Section
+        private void btnFontDefault_Click(object sender, EventArgs e)
+        {
+            SetDefaultFontForTxtContent(txtMessageInformation);
+        }
+
+        private void chbAutoWrap_CheckedChanged(object sender, EventArgs e)
+        {
+            SetWrap(txtMessageInformation, chbAutoWrap.Checked);
+        }
+
+        private void btnFontSmall_Click(object sender, EventArgs e)
+        {
+            var size = txtMessageInformation.Font.Size;
+            SetFontSizeInTextContent(--size, txtMessageInformation);
+        }
+
+        private void btnFontBig_Click(object sender, EventArgs e)
+        {
+            var size = txtMessageInformation.Font.Size;
+            SetFontSizeInTextContent(++size, txtMessageInformation);
+        }
+
+        private void btnPickFont_Click(object sender, EventArgs e)
+        {
+            SetDefaultFont(txtMessageInformation);
+        }
+        #endregion
     }
 }

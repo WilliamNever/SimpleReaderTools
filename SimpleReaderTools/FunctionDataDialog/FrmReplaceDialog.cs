@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using SimpleReaderTools.Core.InterFace;
+using SimpleReaderTools.Core.Utilities;
+using System;
 using System.Windows.Forms;
-using SimpleReaderTools.InterFace;
-using SimpleReaderTools.Utilities;
 
 namespace SimpleReaderTools.FunctionDataDialog
 {
@@ -26,8 +18,15 @@ namespace SimpleReaderTools.FunctionDataDialog
         {
             var contentsBox = _fFunction.GetContentsBox();
             if (!string.IsNullOrEmpty(txtFind.Text))
+            {
                 contentsBox.Text = Replace(contentsBox.Text, txtFind.Text, txtReplaceWith.Text
                     , cbkMatchCase.Checked, cbkRExpression.Checked);
+                var sst = _fFunction.GetWinWorkingStatus();
+
+                var status = string.Format("case {0} {1}", cbkMatchCase.Checked ? "sensitive" : "un-sensitive"
+                    , cbkRExpression.Checked ? "regular expression" : "mode");
+                sst.Text = $"Replace '{txtFind.Text}' with '{txtReplaceWith.Text}' in {status}.";
+            }
         }
 
         private string Replace(string text, string find, string replacement, bool mcase, bool regularEx)

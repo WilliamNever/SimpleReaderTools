@@ -59,6 +59,8 @@
             this.tsmShowFormattedXml = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowNoFormattedXml = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmOrderXmlNodes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSetWinName = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain.SuspendLayout();
             this.grpFunctionality.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -233,7 +235,8 @@
             this.MSMainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MSMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFunctions,
-            this.tsmiTools});
+            this.tsmiTools,
+            this.tsmiWindow});
             this.MSMainMenu.Location = new System.Drawing.Point(0, 0);
             this.MSMainMenu.Name = "MSMainMenu";
             this.MSMainMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -367,6 +370,21 @@
             this.tsmOrderXmlNodes.Size = new System.Drawing.Size(338, 26);
             this.tsmOrderXmlNodes.Text = "Order Xml Nodes";
             // 
+            // tsmiWindow
+            // 
+            this.tsmiWindow.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmSetWinName});
+            this.tsmiWindow.Name = "tsmiWindow";
+            this.tsmiWindow.Size = new System.Drawing.Size(78, 24);
+            this.tsmiWindow.Text = "&Window";
+            this.tsmiWindow.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsmiFunctions_DropDownItemClicked);
+            // 
+            // tsmSetWinName
+            // 
+            this.tsmSetWinName.Name = "tsmSetWinName";
+            this.tsmSetWinName.Size = new System.Drawing.Size(224, 26);
+            this.tsmSetWinName.Text = "Set Window Name";
+            // 
             // FrmShowCharNumber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,5 +439,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmShowFormattedXml;
         private System.Windows.Forms.ToolStripMenuItem tsmShowNoFormattedXml;
         private System.Windows.Forms.ToolStripMenuItem tsmOrderXmlNodes;
+        private System.Windows.Forms.ToolStripMenuItem tsmiWindow;
+        private System.Windows.Forms.ToolStripMenuItem tsmSetWinName;
     }
 }

@@ -54,6 +54,9 @@ namespace SimpleReaderTools.FunctionDataDialog
             CloseAllMenu();
             switch (e.ClickedItem.Name)
             {
+                case "tsmCopyFromMain":
+                    txtMessageInformation.Text = _fFunction.GetContentsBox().Text;
+                    break;
                 case "tsmCopyToMain":
                     _fFunction.CopyTextToForm(txtMessageInformation.Text, false, Text);
                     break;
@@ -92,8 +95,15 @@ namespace SimpleReaderTools.FunctionDataDialog
                     txtMessageInformation.Text = OrderByFormatStringProperties(txtMessageInformation.Text, EnStringType.Xml, true);
                     break;
 
-                case "tsmCopyFromMain":
-                    txtMessageInformation.Text = _fFunction.GetContentsBox().Text;
+                case "tsmSetWinName":
+                    var setValueDialog = new FrmSetValueDialog
+                    {
+                        SetValue = Text
+                    };
+                    if (setValueDialog.ShowDialog(this) == DialogResult.OK)
+                    {
+                        Text = setValueDialog.SetValue;
+                    }
                     break;
             }
         }

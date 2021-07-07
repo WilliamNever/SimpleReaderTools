@@ -59,6 +59,7 @@ namespace SimpleReaderTools.FunctionDataDialog
             this.txtValue.Location = new System.Drawing.Point(12, 12);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
+            this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtValue.Size = new System.Drawing.Size(538, 68);
             this.txtValue.TabIndex = 2;
             // 

@@ -32,6 +32,7 @@
             this.btnShowCharNumber = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.grpFunctionality = new System.Windows.Forms.GroupBox();
+            this.ctrlCutCopyPast = new SimpleReaderTools.Components.CutCopyPastControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnFontBig = new System.Windows.Forms.Button();
             this.btnPickFont = new System.Windows.Forms.Button();
@@ -72,21 +73,19 @@
             this.txtMessageInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMessageInformation.Location = new System.Drawing.Point(16, 156);
-            this.txtMessageInformation.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMessageInformation.Location = new System.Drawing.Point(12, 127);
             this.txtMessageInformation.MaxLength = 0;
             this.txtMessageInformation.Multiline = true;
             this.txtMessageInformation.Name = "txtMessageInformation";
             this.txtMessageInformation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMessageInformation.Size = new System.Drawing.Size(1033, 382);
+            this.txtMessageInformation.Size = new System.Drawing.Size(776, 311);
             this.txtMessageInformation.TabIndex = 0;
             // 
             // btnShowCharNumber
             // 
-            this.btnShowCharNumber.Location = new System.Drawing.Point(8, 21);
-            this.btnShowCharNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShowCharNumber.Location = new System.Drawing.Point(6, 17);
             this.btnShowCharNumber.Name = "btnShowCharNumber";
-            this.btnShowCharNumber.Size = new System.Drawing.Size(112, 28);
+            this.btnShowCharNumber.Size = new System.Drawing.Size(84, 23);
             this.btnShowCharNumber.TabIndex = 0;
             this.btnShowCharNumber.Text = "Char Number";
             this.btnShowCharNumber.UseVisualStyleBackColor = true;
@@ -99,28 +98,35 @@
             this.pnlMain.Controls.Add(this.MSMainMenu);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1067, 554);
+            this.pnlMain.Size = new System.Drawing.Size(800, 450);
             this.pnlMain.TabIndex = 1;
             // 
             // grpFunctionality
             // 
             this.grpFunctionality.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpFunctionality.Controls.Add(this.ctrlCutCopyPast);
             this.grpFunctionality.Controls.Add(this.panel1);
             this.grpFunctionality.Controls.Add(this.btnClear);
             this.grpFunctionality.Controls.Add(this.btnGeneralNewGuid);
             this.grpFunctionality.Controls.Add(this.btnMinMax);
             this.grpFunctionality.Controls.Add(this.btnShowCharNumber);
-            this.grpFunctionality.Location = new System.Drawing.Point(16, 44);
-            this.grpFunctionality.Margin = new System.Windows.Forms.Padding(4);
+            this.grpFunctionality.Location = new System.Drawing.Point(12, 36);
             this.grpFunctionality.Name = "grpFunctionality";
-            this.grpFunctionality.Padding = new System.Windows.Forms.Padding(4);
-            this.grpFunctionality.Size = new System.Drawing.Size(1035, 105);
+            this.grpFunctionality.Size = new System.Drawing.Size(776, 85);
             this.grpFunctionality.TabIndex = 1;
             this.grpFunctionality.TabStop = false;
             this.grpFunctionality.Text = "Functionality";
+            // 
+            // ctrlCutCopyPast
+            // 
+            this.ctrlCutCopyPast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrlCutCopyPast.Location = new System.Drawing.Point(268, 54);
+            this.ctrlCutCopyPast.Name = "ctrlCutCopyPast";
+            this.ctrlCutCopyPast.Size = new System.Drawing.Size(243, 29);
+            this.ctrlCutCopyPast.TabIndex = 17;
+            this.ctrlCutCopyPast.TxtContents = this.txtMessageInformation;
             // 
             // panel1
             // 
@@ -131,18 +137,18 @@
             this.panel1.Controls.Add(this.btnFontSmall);
             this.panel1.Controls.Add(this.chbAutoWrap);
             this.panel1.Controls.Add(this.btnFontDefault);
-            this.panel1.Location = new System.Drawing.Point(786, 15);
+            this.panel1.Location = new System.Drawing.Point(590, 12);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(242, 83);
+            this.panel1.Size = new System.Drawing.Size(182, 68);
             this.panel1.TabIndex = 16;
             // 
             // btnFontBig
             // 
             this.btnFontBig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFontBig.Location = new System.Drawing.Point(163, 11);
-            this.btnFontBig.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFontBig.Location = new System.Drawing.Point(122, 9);
             this.btnFontBig.Name = "btnFontBig";
-            this.btnFontBig.Size = new System.Drawing.Size(69, 28);
+            this.btnFontBig.Size = new System.Drawing.Size(52, 23);
             this.btnFontBig.TabIndex = 13;
             this.btnFontBig.Text = ">>";
             this.btnFontBig.UseVisualStyleBackColor = true;
@@ -151,9 +157,10 @@
             // btnPickFont
             // 
             this.btnPickFont.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPickFont.Location = new System.Drawing.Point(8, 46);
+            this.btnPickFont.Location = new System.Drawing.Point(6, 37);
+            this.btnPickFont.Margin = new System.Windows.Forms.Padding(2);
             this.btnPickFont.Name = "btnPickFont";
-            this.btnPickFont.Size = new System.Drawing.Size(78, 28);
+            this.btnPickFont.Size = new System.Drawing.Size(58, 23);
             this.btnPickFont.TabIndex = 15;
             this.btnPickFont.Text = "Font Pick";
             this.btnPickFont.UseVisualStyleBackColor = true;
@@ -162,10 +169,9 @@
             // btnFontSmall
             // 
             this.btnFontSmall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFontSmall.Location = new System.Drawing.Point(8, 11);
-            this.btnFontSmall.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFontSmall.Location = new System.Drawing.Point(6, 9);
             this.btnFontSmall.Name = "btnFontSmall";
-            this.btnFontSmall.Size = new System.Drawing.Size(69, 28);
+            this.btnFontSmall.Size = new System.Drawing.Size(52, 23);
             this.btnFontSmall.TabIndex = 11;
             this.btnFontSmall.Text = "<<";
             this.btnFontSmall.UseVisualStyleBackColor = true;
@@ -177,10 +183,9 @@
             this.chbAutoWrap.AutoSize = true;
             this.chbAutoWrap.Checked = true;
             this.chbAutoWrap.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbAutoWrap.Location = new System.Drawing.Point(139, 51);
-            this.chbAutoWrap.Margin = new System.Windows.Forms.Padding(4);
+            this.chbAutoWrap.Location = new System.Drawing.Point(100, 41);
             this.chbAutoWrap.Name = "chbAutoWrap";
-            this.chbAutoWrap.Size = new System.Drawing.Size(93, 21);
+            this.chbAutoWrap.Size = new System.Drawing.Size(74, 17);
             this.chbAutoWrap.TabIndex = 14;
             this.chbAutoWrap.Text = "AutoWrap";
             this.chbAutoWrap.UseVisualStyleBackColor = true;
@@ -189,10 +194,9 @@
             // btnFontDefault
             // 
             this.btnFontDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFontDefault.Location = new System.Drawing.Point(85, 11);
-            this.btnFontDefault.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFontDefault.Location = new System.Drawing.Point(64, 9);
             this.btnFontDefault.Name = "btnFontDefault";
-            this.btnFontDefault.Size = new System.Drawing.Size(69, 28);
+            this.btnFontDefault.Size = new System.Drawing.Size(52, 23);
             this.btnFontDefault.TabIndex = 12;
             this.btnFontDefault.Text = "Default";
             this.btnFontDefault.UseVisualStyleBackColor = true;
@@ -201,9 +205,10 @@
             // btnClear
             // 
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnClear.Location = new System.Drawing.Point(688, 70);
+            this.btnClear.Location = new System.Drawing.Point(516, 57);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 28);
+            this.btnClear.Size = new System.Drawing.Size(56, 23);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -211,9 +216,10 @@
             // 
             // btnGeneralNewGuid
             // 
-            this.btnGeneralNewGuid.Location = new System.Drawing.Point(264, 21);
+            this.btnGeneralNewGuid.Location = new System.Drawing.Point(198, 17);
+            this.btnGeneralNewGuid.Margin = new System.Windows.Forms.Padding(2);
             this.btnGeneralNewGuid.Name = "btnGeneralNewGuid";
-            this.btnGeneralNewGuid.Size = new System.Drawing.Size(112, 28);
+            this.btnGeneralNewGuid.Size = new System.Drawing.Size(84, 23);
             this.btnGeneralNewGuid.TabIndex = 2;
             this.btnGeneralNewGuid.Text = "New Guid";
             this.btnGeneralNewGuid.UseVisualStyleBackColor = true;
@@ -221,10 +227,9 @@
             // 
             // btnMinMax
             // 
-            this.btnMinMax.Location = new System.Drawing.Point(136, 21);
-            this.btnMinMax.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinMax.Location = new System.Drawing.Point(102, 17);
             this.btnMinMax.Name = "btnMinMax";
-            this.btnMinMax.Size = new System.Drawing.Size(112, 28);
+            this.btnMinMax.Size = new System.Drawing.Size(84, 23);
             this.btnMinMax.TabIndex = 1;
             this.btnMinMax.Text = "MinMaxValue";
             this.btnMinMax.UseVisualStyleBackColor = true;
@@ -239,8 +244,7 @@
             this.tsmiWindow});
             this.MSMainMenu.Location = new System.Drawing.Point(0, 0);
             this.MSMainMenu.Name = "MSMainMenu";
-            this.MSMainMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.MSMainMenu.Size = new System.Drawing.Size(1067, 28);
+            this.MSMainMenu.Size = new System.Drawing.Size(800, 24);
             this.MSMainMenu.TabIndex = 2;
             this.MSMainMenu.Text = "Main Menu";
             // 
@@ -256,7 +260,7 @@
             this.toolStripSeparator1,
             this.tsmClose});
             this.tsmiFunctions.Name = "tsmiFunctions";
-            this.tsmiFunctions.Size = new System.Drawing.Size(79, 24);
+            this.tsmiFunctions.Size = new System.Drawing.Size(66, 20);
             this.tsmiFunctions.Text = "&Function";
             this.tsmiFunctions.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsmiFunctions_DropDownItemClicked);
             // 
@@ -265,47 +269,47 @@
             this.tsmCopyFromMain.Name = "tsmCopyFromMain";
             this.tsmCopyFromMain.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.M)));
-            this.tsmCopyFromMain.Size = new System.Drawing.Size(319, 26);
+            this.tsmCopyFromMain.Size = new System.Drawing.Size(259, 22);
             this.tsmCopyFromMain.Text = "Copy From MainForm";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(316, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(256, 6);
             // 
             // tsmCopyToMain
             // 
             this.tsmCopyToMain.Name = "tsmCopyToMain";
-            this.tsmCopyToMain.Size = new System.Drawing.Size(319, 26);
+            this.tsmCopyToMain.Size = new System.Drawing.Size(259, 22);
             this.tsmCopyToMain.Text = "&Copy To Main Form";
             // 
             // tsmiCopyClose
             // 
             this.tsmiCopyClose.Name = "tsmiCopyClose";
-            this.tsmiCopyClose.Size = new System.Drawing.Size(319, 26);
+            this.tsmiCopyClose.Size = new System.Drawing.Size(259, 22);
             this.tsmiCopyClose.Text = "Copy &and Close";
             // 
             // tsmAppToForm
             // 
             this.tsmAppToForm.Name = "tsmAppToForm";
-            this.tsmAppToForm.Size = new System.Drawing.Size(319, 26);
+            this.tsmAppToForm.Size = new System.Drawing.Size(259, 22);
             this.tsmAppToForm.Text = "&Append To Main Form";
             // 
             // tsmAppAndClose
             // 
             this.tsmAppAndClose.Name = "tsmAppAndClose";
-            this.tsmAppAndClose.Size = new System.Drawing.Size(319, 26);
+            this.tsmAppAndClose.Size = new System.Drawing.Size(259, 22);
             this.tsmAppAndClose.Text = "Append and Close";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(316, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(256, 6);
             // 
             // tsmClose
             // 
             this.tsmClose.Name = "tsmClose";
-            this.tsmClose.Size = new System.Drawing.Size(319, 26);
+            this.tsmClose.Size = new System.Drawing.Size(259, 22);
             this.tsmClose.Text = "Cl&ose";
             // 
             // tsmiTools
@@ -319,7 +323,7 @@
             this.tsmShowNoFormattedXml,
             this.tsmOrderXmlNodes});
             this.tsmiTools.Name = "tsmiTools";
-            this.tsmiTools.Size = new System.Drawing.Size(58, 24);
+            this.tsmiTools.Size = new System.Drawing.Size(46, 20);
             this.tsmiTools.Text = "&Tools";
             this.tsmiTools.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsmiFunctions_DropDownItemClicked);
             // 
@@ -328,7 +332,7 @@
             this.tsmShowFormattedJson.Name = "tsmShowFormattedJson";
             this.tsmShowFormattedJson.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.J)));
-            this.tsmShowFormattedJson.Size = new System.Drawing.Size(338, 26);
+            this.tsmShowFormattedJson.Size = new System.Drawing.Size(271, 22);
             this.tsmShowFormattedJson.Text = "Show Formatted Json";
             // 
             // tsmShowNoFormattedJson
@@ -336,38 +340,38 @@
             this.tsmShowNoFormattedJson.Name = "tsmShowNoFormattedJson";
             this.tsmShowNoFormattedJson.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.N)));
-            this.tsmShowNoFormattedJson.Size = new System.Drawing.Size(338, 26);
+            this.tsmShowNoFormattedJson.Size = new System.Drawing.Size(271, 22);
             this.tsmShowNoFormattedJson.Text = "Show No Formatted json";
             // 
             // tsmOrderJsonProperties
             // 
             this.tsmOrderJsonProperties.Name = "tsmOrderJsonProperties";
-            this.tsmOrderJsonProperties.Size = new System.Drawing.Size(338, 26);
+            this.tsmOrderJsonProperties.Size = new System.Drawing.Size(271, 22);
             this.tsmOrderJsonProperties.Text = "Order Json Properties";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(335, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(268, 6);
             // 
             // tsmShowFormattedXml
             // 
             this.tsmShowFormattedXml.Name = "tsmShowFormattedXml";
             this.tsmShowFormattedXml.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.X)));
-            this.tsmShowFormattedXml.Size = new System.Drawing.Size(338, 26);
+            this.tsmShowFormattedXml.Size = new System.Drawing.Size(271, 22);
             this.tsmShowFormattedXml.Text = "Show Formatted Xml";
             // 
             // tsmShowNoFormattedXml
             // 
             this.tsmShowNoFormattedXml.Name = "tsmShowNoFormattedXml";
-            this.tsmShowNoFormattedXml.Size = new System.Drawing.Size(338, 26);
+            this.tsmShowNoFormattedXml.Size = new System.Drawing.Size(271, 22);
             this.tsmShowNoFormattedXml.Text = "Show No Formatted Xml";
             // 
             // tsmOrderXmlNodes
             // 
             this.tsmOrderXmlNodes.Name = "tsmOrderXmlNodes";
-            this.tsmOrderXmlNodes.Size = new System.Drawing.Size(338, 26);
+            this.tsmOrderXmlNodes.Size = new System.Drawing.Size(271, 22);
             this.tsmOrderXmlNodes.Text = "Order Xml Nodes";
             // 
             // tsmiWindow
@@ -375,24 +379,23 @@
             this.tsmiWindow.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmSetWinName});
             this.tsmiWindow.Name = "tsmiWindow";
-            this.tsmiWindow.Size = new System.Drawing.Size(78, 24);
+            this.tsmiWindow.Size = new System.Drawing.Size(63, 20);
             this.tsmiWindow.Text = "&Window";
             this.tsmiWindow.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsmiFunctions_DropDownItemClicked);
             // 
             // tsmSetWinName
             // 
             this.tsmSetWinName.Name = "tsmSetWinName";
-            this.tsmSetWinName.Size = new System.Drawing.Size(224, 26);
+            this.tsmSetWinName.Size = new System.Drawing.Size(172, 22);
             this.tsmSetWinName.Text = "Set Window Name";
             // 
             // FrmShowCharNumber
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlMain);
             this.MainMenuStrip = this.MSMainMenu;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmShowCharNumber";
             this.Text = "Const Tools Windows";
             this.pnlMain.ResumeLayout(false);
@@ -441,5 +444,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmOrderXmlNodes;
         private System.Windows.Forms.ToolStripMenuItem tsmiWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmSetWinName;
+        private Components.CutCopyPastControl ctrlCutCopyPast;
     }
 }

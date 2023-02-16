@@ -24,6 +24,7 @@ namespace SimpleReaderTools
         {
             Windows = new WindowsDefinitions();
             InitializeComponent();
+            //ctrlCutCpyPst.SetTextBox(txtContents);
         }
 
         private void txtPath_DragEnter(object sender, DragEventArgs e)
@@ -244,41 +245,19 @@ namespace SimpleReaderTools
 
         #endregion
 
-        private void btnSelALL_Click(object sender, EventArgs e)
-        {
-            txtContents.Select();
-            txtContents.SelectAll();
-        }
-
-        private void BtnCopySel_Click(object sender, EventArgs e)
-        {
-            txtContents.Copy();
-            txtContents.Select();
-        }
-
-        private void btnPaste_Click(object sender, EventArgs e)
-        {
-            if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text))
-            {
-                txtContents.Paste();
-            }
-
-            txtContents.Select();
-        }
-
         private void TSMIEdit_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             CloseAllMenu();
             switch (e.ClickedItem.Name)
             {
                 case "MNISelectALL":
-                    btnSelALL_Click(sender, e);
+                    ctrlCutCpyPst.SellectAll(sender, e);
                     break;
                 case "MNICopy":
-                    BtnCopySel_Click(sender, e);
+                    ctrlCutCpyPst.CopySelected(sender, e);
                     break;
                 case "MNIPaste":
-                    btnPaste_Click(sender, e);
+                    ctrlCutCpyPst.Paste(sender, e);
                     break;
                 case "MNITrim":
                     txtContents.Text = TrimTexBox(txtContents.Text);

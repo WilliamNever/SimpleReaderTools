@@ -20,6 +20,7 @@ namespace SimpleReaderTools.FunctionDataDialog
             Text = $"{Text}[{WindowName}]";
             SetDefaultFontForTxtContent(txtMessageInformation);
             SetWrap(txtMessageInformation, chbAutoWrap.Checked);
+            //ctrlCutCopyPast.SetTextBox(txtMessageInformation);
         }
 
         private void btnShowCharNumber_Click(object sender, EventArgs e)

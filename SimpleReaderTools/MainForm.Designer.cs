@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlDeployment = new System.Windows.Forms.Panel();
-            this.ctrlCutCpyPst = new SimpleReaderTools.Components.CutCopyPastControl();
+            this.txtContents = new System.Windows.Forms.TextBox();
             this.chbAutoWrap = new System.Windows.Forms.CheckBox();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.TSMIFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,10 +52,8 @@
             this.btnFontBig = new System.Windows.Forms.Button();
             this.btnFontDefault = new System.Windows.Forms.Button();
             this.btnFontSmall = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.txtContents = new System.Windows.Forms.TextBox();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,6 +61,7 @@
             this.tssWinLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssSplitLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssWorkingLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ctrlCutCpyPst = new SimpleReaderTools.Components.CutCopyPastControl();
             this.pnlDeployment.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.sstStatusStrip.SuspendLayout();
@@ -79,7 +78,6 @@
             this.pnlDeployment.Controls.Add(this.btnFontBig);
             this.pnlDeployment.Controls.Add(this.btnFontDefault);
             this.pnlDeployment.Controls.Add(this.btnFontSmall);
-            this.pnlDeployment.Controls.Add(this.btnClear);
             this.pnlDeployment.Controls.Add(this.btnBrowse);
             this.pnlDeployment.Controls.Add(this.btnOpen);
             this.pnlDeployment.Controls.Add(this.txtContents);
@@ -91,14 +89,22 @@
             this.pnlDeployment.Size = new System.Drawing.Size(800, 492);
             this.pnlDeployment.TabIndex = 0;
             // 
-            // ctrlCutCpyPst
+            // txtContents
             // 
-            this.ctrlCutCpyPst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctrlCutCpyPst.Location = new System.Drawing.Point(438, 68);
-            this.ctrlCutCpyPst.Name = "ctrlCutCpyPst";
-            this.ctrlCutCpyPst.Size = new System.Drawing.Size(243, 29);
-            this.ctrlCutCpyPst.TabIndex = 12;
-            this.ctrlCutCpyPst.TxtContents = this.txtContents;
+            this.txtContents.AllowDrop = true;
+            this.txtContents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContents.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContents.Location = new System.Drawing.Point(12, 101);
+            this.txtContents.MaxLength = 0;
+            this.txtContents.Multiline = true;
+            this.txtContents.Name = "txtContents";
+            this.txtContents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtContents.Size = new System.Drawing.Size(776, 379);
+            this.txtContents.TabIndex = 3;
+            this.txtContents.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtContents_DragDrop);
+            this.txtContents.DragEnter += new System.Windows.Forms.DragEventHandler(this.txtContents_DragEnter);
             // 
             // chbAutoWrap
             // 
@@ -287,21 +293,10 @@
             this.btnFontSmall.UseVisualStyleBackColor = true;
             this.btnFontSmall.Click += new System.EventHandler(this.btnFontSmall_Click);
             // 
-            // btnClear
-            // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClear.Location = new System.Drawing.Point(713, 72);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 6;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // btnBrowse
             // 
             this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBrowse.Location = new System.Drawing.Point(599, 35);
+            this.btnBrowse.Location = new System.Drawing.Point(608, 35);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 5;
@@ -321,23 +316,6 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // txtContents
-            // 
-            this.txtContents.AllowDrop = true;
-            this.txtContents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtContents.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContents.Location = new System.Drawing.Point(12, 101);
-            this.txtContents.MaxLength = 0;
-            this.txtContents.Multiline = true;
-            this.txtContents.Name = "txtContents";
-            this.txtContents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtContents.Size = new System.Drawing.Size(776, 379);
-            this.txtContents.TabIndex = 3;
-            this.txtContents.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtContents_DragDrop);
-            this.txtContents.DragEnter += new System.Windows.Forms.DragEventHandler(this.txtContents_DragEnter);
-            // 
             // txtPath
             // 
             this.txtPath.AllowDrop = true;
@@ -345,7 +323,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPath.Location = new System.Drawing.Point(54, 36);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(538, 20);
+            this.txtPath.Size = new System.Drawing.Size(548, 20);
             this.txtPath.TabIndex = 2;
             this.txtPath.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtPath_DragDrop);
             this.txtPath.DragEnter += new System.Windows.Forms.DragEventHandler(this.txtPath_DragEnter);
@@ -397,6 +375,15 @@
             this.tssWorkingLabel.Name = "tssWorkingLabel";
             this.tssWorkingLabel.Size = new System.Drawing.Size(0, 17);
             // 
+            // ctrlCutCpyPst
+            // 
+            this.ctrlCutCpyPst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrlCutCpyPst.Location = new System.Drawing.Point(445, 68);
+            this.ctrlCutCpyPst.Name = "ctrlCutCpyPst";
+            this.ctrlCutCpyPst.Size = new System.Drawing.Size(344, 29);
+            this.ctrlCutCpyPst.TabIndex = 12;
+            this.ctrlCutCpyPst.TxtContents = this.txtContents;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,7 +414,6 @@
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnFontBig;
         private System.Windows.Forms.Button btnFontDefault;
         private System.Windows.Forms.Button btnFontSmall;

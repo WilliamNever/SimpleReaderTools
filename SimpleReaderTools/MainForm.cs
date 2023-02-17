@@ -24,7 +24,8 @@ namespace SimpleReaderTools
         {
             Windows = new WindowsDefinitions();
             InitializeComponent();
-            //ctrlCutCpyPst.SetTextBox(txtContents);
+            ctrlCutCpyPst.EventClearContent += 
+                (object sender, EventArgs e) => { CloseFileWithoutSave(); };
         }
 
         private void txtPath_DragEnter(object sender, DragEventArgs e)
@@ -98,11 +99,6 @@ namespace SimpleReaderTools
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             txtPath.Text = files != null && files.Length > 0 ? files[0] : "";
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            CloseFileWithoutSave();
         }
 
         private void CloseFileWithoutSave()

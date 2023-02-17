@@ -16,6 +16,7 @@ namespace SimpleReaderTools.Components
         //public string AX { get; set; }
         [Browsable(true)]
         public TextBox TxtContents { get; set; }
+        public event EventHandler EventClearContent;
         public CutCopyPastControl()
         {
             InitializeComponent();
@@ -57,6 +58,11 @@ namespace SimpleReaderTools.Components
         public void Paste(object sender, EventArgs e)
         {
             btnPaste_Click(sender, e);
+        }
+        
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            EventClearContent.Invoke(sender, e);
         }
     }
 }

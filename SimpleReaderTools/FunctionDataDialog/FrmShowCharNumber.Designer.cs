@@ -39,7 +39,6 @@
             this.btnFontSmall = new System.Windows.Forms.Button();
             this.chbAutoWrap = new System.Windows.Forms.CheckBox();
             this.btnFontDefault = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnGeneralNewGuid = new System.Windows.Forms.Button();
             this.btnMinMax = new System.Windows.Forms.Button();
             this.MSMainMenu = new System.Windows.Forms.MenuStrip();
@@ -108,7 +107,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpFunctionality.Controls.Add(this.ctrlCutCopyPast);
             this.grpFunctionality.Controls.Add(this.panel1);
-            this.grpFunctionality.Controls.Add(this.btnClear);
             this.grpFunctionality.Controls.Add(this.btnGeneralNewGuid);
             this.grpFunctionality.Controls.Add(this.btnMinMax);
             this.grpFunctionality.Controls.Add(this.btnShowCharNumber);
@@ -122,9 +120,9 @@
             // ctrlCutCopyPast
             // 
             this.ctrlCutCopyPast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctrlCutCopyPast.Location = new System.Drawing.Point(268, 54);
+            this.ctrlCutCopyPast.Location = new System.Drawing.Point(238, 52);
             this.ctrlCutCopyPast.Name = "ctrlCutCopyPast";
-            this.ctrlCutCopyPast.Size = new System.Drawing.Size(243, 29);
+            this.ctrlCutCopyPast.Size = new System.Drawing.Size(350, 29);
             this.ctrlCutCopyPast.TabIndex = 17;
             this.ctrlCutCopyPast.TxtContents = this.txtMessageInformation;
             // 
@@ -201,18 +199,6 @@
             this.btnFontDefault.Text = "Default";
             this.btnFontDefault.UseVisualStyleBackColor = true;
             this.btnFontDefault.Click += new System.EventHandler(this.btnFontDefault_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnClear.Location = new System.Drawing.Point(516, 57);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(56, 23);
-            this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnGeneralNewGuid
             // 
@@ -425,7 +411,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmAppAndClose;
         private System.Windows.Forms.Button btnMinMax;
         private System.Windows.Forms.Button btnGeneralNewGuid;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ToolStripMenuItem tsmiTools;
         private System.Windows.Forms.ToolStripMenuItem tsmShowFormattedJson;
         private System.Windows.Forms.ToolStripMenuItem tsmShowNoFormattedJson;

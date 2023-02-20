@@ -20,11 +20,11 @@ namespace SimpleReaderTools.Components
                 var controlSender = sender as Control;
                 if (controlSender != null)
                 {
-                    MessageBox.Show(this, $"Control {controlSender.Text} - {Environment.NewLine}{ex}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, $"Action {controlSender.Text} - {Environment.NewLine}{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show(this, ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

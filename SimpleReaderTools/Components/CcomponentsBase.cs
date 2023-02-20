@@ -9,7 +9,7 @@ namespace SimpleReaderTools.Components
 {
     public abstract class CcomponentsBase : UserControl
     {
-        protected async Task RunProcessAsync(object sender, EventArgs e, Func<object, EventArgs, Task> func)
+        protected virtual async Task RunProcessAsync(object sender, EventArgs e, Func<object, EventArgs, Task> func)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace SimpleReaderTools.Components
                 }
             }
         }
-        protected void RunProcess(object sender, EventArgs e, Action<object, EventArgs> func)
+        protected virtual void RunProcess(object sender, EventArgs e, Action<object, EventArgs> func)
         {
             try
             {

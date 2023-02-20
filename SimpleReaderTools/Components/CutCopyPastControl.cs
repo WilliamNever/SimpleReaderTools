@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SimpleReaderTools.Components
 {
-    public partial class CutCopyPastControl : UserControl
+    public partial class CutCopyPastControl : CcomponentsBase
     {
         //[Browsable(true)]// to display the property in the Properties dialog
         //public string AX { get; set; }
@@ -27,42 +27,48 @@ namespace SimpleReaderTools.Components
         }
         private void btnSelALL_Click(object sender, EventArgs e)
         {
-            TxtContents.Select();
-            TxtContents.SelectAll();
+            RunProcess(sender, e, (s, ea) => {
+                TxtContents.Select();
+                TxtContents.SelectAll();
+            });
         }
 
         private void BtnCopySel_Click(object sender, EventArgs e)
         {
-            TxtContents.Copy();
-            TxtContents.Select();
+            RunProcess(sender, e, (s, ea) => {
+                TxtContents.Copy();
+                TxtContents.Select();
+            });
         }
 
         private void btnPaste_Click(object sender, EventArgs e)
         {
-            if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text))
-            {
-                TxtContents.Paste();
-            }
+            RunProcess(sender, e, (s, ea) => {
+                if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text))
+                {
+                    TxtContents.Paste();
+                }
 
-            TxtContents.Select();
+                TxtContents.Select();
+            });
         }
 
         public void SellectAll(object sender, EventArgs e)
         {
-            btnSelALL_Click(sender, e);
+            RunProcess(sender, e, (s, ea) => { btnSelALL_Click(s, ea); });
         }
         public void CopySelected(object sender, EventArgs e)
         {
-            BtnCopySel_Click(sender, e);
+            RunProcess(sender, e, (s, ea) => { BtnCopySel_Click(s, ea); });
         }
         public void Paste(object sender, EventArgs e)
         {
-            btnPaste_Click(sender, e);
+            RunProcess(sender, e, (s, ea) => { btnPaste_Click(s, ea); });
         }
         
         private void btnClear_Click(object sender, EventArgs e)
         {
-            EventClearContent.Invoke(sender, e);
+            RunProcess(sender, e, (s, ea) => { EventClearContent.Invoke(s, ea); });
         }
     }
 }

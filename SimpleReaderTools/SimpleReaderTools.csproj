@@ -52,6 +52,9 @@
     <Compile Include="BaseClasses\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Components\CcomponentsBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Components\CutCopyPastControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

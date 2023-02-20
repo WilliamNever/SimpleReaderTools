@@ -24,7 +24,7 @@ namespace SimpleReaderTools
         {
             Windows = new WindowsDefinitions();
             InitializeComponent();
-            ctrlCutCpyPst.EventClearContent += 
+            ctrlCutCpyPst.EventClearContent +=
                 (object sender, EventArgs e) => { CloseFileWithoutSave(); };
         }
 

@@ -20,6 +20,7 @@ namespace SimpleReaderTools.FunctionDataDialog
             Text = $"{Text}[{WindowName}]";
             SetDefaultFontForTxtContent(txtMessageInformation);
             SetWrap(txtMessageInformation, chbAutoWrap.Checked);
+            ctrlCutCopyPast.EventClearContent += (object sender, EventArgs e) => { txtMessageInformation.Text = ""; };
         }
 
         private void btnShowCharNumber_Click(object sender, EventArgs e)
@@ -189,11 +190,6 @@ namespace SimpleReaderTools.FunctionDataDialog
         {
             txtMessageInformation.Text += Guid.NewGuid().ToString();
             txtMessageInformation.Text += "\r\n";
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            txtMessageInformation.Text = "";
         }
 
         #region Font pick Section

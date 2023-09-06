@@ -55,6 +55,9 @@
     <Compile Include="Components\CcomponentsBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Components\CcomponentsBase.Designer.cs">
+      <DependentUpon>CcomponentsBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\CutCopyPastControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

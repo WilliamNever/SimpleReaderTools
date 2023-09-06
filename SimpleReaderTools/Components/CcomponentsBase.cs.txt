@@ -1,15 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SimpleReaderTools.Components
 {
-    public partial class CcomponentsBase : UserControl
+    public abstract class CcomponentsBase : UserControl
     {
-        public CcomponentsBase()
-        {
-            InitializeComponent();
-        }
         protected virtual async Task RunProcessAsync(object sender, EventArgs e, Func<object, EventArgs, Task> func)
         {
             try

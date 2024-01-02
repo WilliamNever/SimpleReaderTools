@@ -46,6 +46,11 @@ namespace SimpleReaderTools.FunctionDataDialog
             bool isEnabled = sitem.Id == DrDownItem.CustomId;
             txtCharactersSeeds.Enabled = isEnabled;
             btnClear.Enabled = isEnabled;
+            if (!isEnabled)
+            {
+                txtCharactersSeeds.BackColor = txtBackColor;
+                txtCharactersSeeds.ForeColor = txtForeColor;
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)

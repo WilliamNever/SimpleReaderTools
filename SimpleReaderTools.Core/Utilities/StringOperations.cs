@@ -9,6 +9,11 @@ namespace SimpleReaderTools.Core.Utilities
 {
     public class StringOperations
     {
+        private Random _ran;
+        public StringOperations()
+        {
+            _ran = new Random(unchecked((int)DateTime.Now.Ticks));
+        }
         public static string RegularReplace(string text, string find, string replacement, bool mcase)
         {
             Regex reg = new Regex(find, mcase ? RegexOptions.None : RegexOptions.IgnoreCase);
@@ -28,6 +33,16 @@ namespace SimpleReaderTools.Core.Utilities
                 index = result?.IndexOf(find, ReplacedString.Length, mcaseOption) ?? -1;
             }
             return result;
+        }
+        public string RandomStrings(string seeds, int length)
+        {
+            var str = "";
+            
+            for (int l = 0; l < length; l++)
+            {
+                str += seeds[_ran.Next(0, seeds.Length)];
+            }
+            return str;
         }
     }
 }

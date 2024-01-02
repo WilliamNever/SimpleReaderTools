@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlDeployment = new System.Windows.Forms.Panel();
+            this.ctrlCutCpyPst = new SimpleReaderTools.Components.CutCopyPastControl();
             this.txtContents = new System.Windows.Forms.TextBox();
             this.chbAutoWrap = new System.Windows.Forms.CheckBox();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
@@ -61,7 +62,7 @@
             this.tssWinLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssSplitLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssWorkingLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ctrlCutCpyPst = new SimpleReaderTools.Components.CutCopyPastControl();
+            this.MNIRandomStringsGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDeployment.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.sstStatusStrip.SuspendLayout();
@@ -88,6 +89,15 @@
             this.pnlDeployment.Name = "pnlDeployment";
             this.pnlDeployment.Size = new System.Drawing.Size(800, 492);
             this.pnlDeployment.TabIndex = 0;
+            // 
+            // ctrlCutCpyPst
+            // 
+            this.ctrlCutCpyPst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrlCutCpyPst.Location = new System.Drawing.Point(445, 68);
+            this.ctrlCutCpyPst.Name = "ctrlCutCpyPst";
+            this.ctrlCutCpyPst.Size = new System.Drawing.Size(344, 29);
+            this.ctrlCutCpyPst.TabIndex = 12;
+            this.ctrlCutCpyPst.TxtContents = this.txtContents;
             // 
             // txtContents
             // 
@@ -247,7 +257,8 @@
             // TSMIToolsWindows
             // 
             this.TSMIToolsWindows.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MNIShowCharNumber});
+            this.MNIShowCharNumber,
+            this.MNIRandomStringsGeneratorToolStripMenuItem});
             this.TSMIToolsWindows.Name = "TSMIToolsWindows";
             this.TSMIToolsWindows.Size = new System.Drawing.Size(98, 20);
             this.TSMIToolsWindows.Text = "&Tools Windows";
@@ -375,14 +386,11 @@
             this.tssWorkingLabel.Name = "tssWorkingLabel";
             this.tssWorkingLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // ctrlCutCpyPst
+            // MNIRandomStringsGeneratorToolStripMenuItem
             // 
-            this.ctrlCutCpyPst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctrlCutCpyPst.Location = new System.Drawing.Point(445, 68);
-            this.ctrlCutCpyPst.Name = "ctrlCutCpyPst";
-            this.ctrlCutCpyPst.Size = new System.Drawing.Size(344, 29);
-            this.ctrlCutCpyPst.TabIndex = 12;
-            this.ctrlCutCpyPst.TxtContents = this.txtContents;
+            this.MNIRandomStringsGeneratorToolStripMenuItem.Name = "MNIRandomStringsGeneratorToolStripMenuItem";
+            this.MNIRandomStringsGeneratorToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.MNIRandomStringsGeneratorToolStripMenuItem.Text = "Random Strings Generator";
             // 
             // MainForm
             // 
@@ -441,6 +449,7 @@
         private System.Windows.Forms.ToolStripStatusLabel tssWorkingLabel;
         private System.Windows.Forms.ToolStripStatusLabel tssSplitLabel;
         private Components.CutCopyPastControl ctrlCutCpyPst;
+        private System.Windows.Forms.ToolStripMenuItem MNIRandomStringsGeneratorToolStripMenuItem;
     }
 }
 

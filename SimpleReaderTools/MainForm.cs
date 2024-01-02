@@ -175,6 +175,14 @@ namespace SimpleReaderTools
                         frm.Show();
                     }
                     break;
+                case "MNIRandomStringsGeneratorToolStripMenuItem":
+                    lock (Windows)
+                    {
+                        FrmRandomGenerator frm = new FrmRandomGenerator();
+                        Windows.WindowNum++;
+                        frm.Show();
+                    }
+                    break;
             }
         }
 

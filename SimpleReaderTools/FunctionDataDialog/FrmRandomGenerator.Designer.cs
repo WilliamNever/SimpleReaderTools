@@ -77,6 +77,7 @@
             // btnGenerate
             // 
             this.btnGenerate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerate.CausesValidation = false;
             this.btnGenerate.Location = new System.Drawing.Point(688, 60);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(99, 23);
@@ -122,6 +123,7 @@
             // btnClear
             // 
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.CausesValidation = false;
             this.btnClear.Location = new System.Drawing.Point(725, 18);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(62, 23);
@@ -142,6 +144,7 @@
             // 
             // cmbPattern
             // 
+            this.cmbPattern.CausesValidation = false;
             this.cmbPattern.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPattern.FormattingEnabled = true;
             this.cmbPattern.Location = new System.Drawing.Point(8, 19);
@@ -155,6 +158,7 @@
             this.txtContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContent.CausesValidation = false;
             this.txtContent.Location = new System.Drawing.Point(3, 102);
             this.txtContent.Multiline = true;
             this.txtContent.Name = "txtContent";
@@ -165,6 +169,7 @@
             // txtCcpComp
             // 
             this.txtCcpComp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCcpComp.CausesValidation = false;
             this.txtCcpComp.Location = new System.Drawing.Point(455, 418);
             this.txtCcpComp.Name = "txtCcpComp";
             this.txtCcpComp.Size = new System.Drawing.Size(342, 29);
@@ -175,10 +180,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnl1);
             this.Name = "FrmRandomGenerator";
             this.Text = "Random Strings Generator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmRandomGenerator_FormClosing);
             this.pnl1.ResumeLayout(false);
             this.pnl1.PerformLayout();
             this.grpbConfig.ResumeLayout(false);

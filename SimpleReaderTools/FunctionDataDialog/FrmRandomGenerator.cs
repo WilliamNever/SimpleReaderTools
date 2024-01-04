@@ -120,6 +120,23 @@ namespace SimpleReaderTools.FunctionDataDialog
                 }
             }
         }
+
+        private void FrmRandomGenerator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
+
+        private void RemoveCausesValidation(Control control)
+        {
+            control.CausesValidation = false;
+            if (control.HasChildren)
+            {
+                foreach (Control c in control.Controls)
+                {
+                    RemoveCausesValidation(c);
+                }
+            }
+        }
     }
 
     public class DrDownItem : ListItemModel<string>

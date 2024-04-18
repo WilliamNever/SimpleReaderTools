@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,5 +56,36 @@ namespace SimpleReaderTools.BaseClasses
                 txtContents.ForeColor = fd.Color;
             }
         }
+
+        protected string Control_DragDrop<CT>(CT sender, DragEventArgs e) where CT:Control
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            var fp = files != null && files.Length > 0 ? files[0] : null;
+            if (!string.IsNullOrWhiteSpace(fp))
+            {
+                using (StreamReader srReader = new StreamReader(fp, true))
+                {
+                    sender.Text = srReader.ReadToEnd();
+                }
+            }
+            return fp;
+        }
+
+        protected DragEventArgs Control_DragEnter<CT>(CT sender, DragEventArgs e) where CT : Control
+        {
+            e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ? DragDropEffects.All : DragDropEffects.None;
+            return e;
+        }
+
+        protected void ControlHandler_DragDrop(object sender, DragEventArgs e)
+        {
+            Control_DragDrop(sender as Control, e);
+        }
+
+        protected void ControlHandler_DragEnter(object sender, DragEventArgs e)
+        {
+            Control_DragEnter(sender as Control, e);
+        }
+
     }
 }

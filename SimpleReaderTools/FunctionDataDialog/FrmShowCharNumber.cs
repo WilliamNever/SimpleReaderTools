@@ -224,20 +224,12 @@ namespace SimpleReaderTools.FunctionDataDialog
 
         private void txtMessageInformation_DragDrop(object sender, DragEventArgs e)
         {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            var fp = files != null && files.Length > 0 ? files[0] : "";
-            if (!string.IsNullOrWhiteSpace(fp))
-            {
-                using (StreamReader srReader = new StreamReader(fp, true))
-                {
-                    txtMessageInformation.Text = srReader.ReadToEnd();
-                }
-            }
+            Control_DragDrop(sender as Control, e);
         }
 
         private void txtMessageInformation_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ? DragDropEffects.All : DragDropEffects.None;
+            Control_DragEnter(sender as Control, e);
         }
     }
 }

@@ -179,8 +179,15 @@ namespace SimpleReaderTools
                     lock (Windows)
                     {
                         FrmRandomGenerator frm = new FrmRandomGenerator();
+                        frm.Text = $"{frm.Text}[{Windows.WindowNum}]";
                         Windows.WindowNum++;
                         frm.Show();
+                    }
+                    break;
+                case "MNIResetWinNumber":
+                    lock (Windows)
+                    {
+                        Windows = new WindowsDefinitions();
                     }
                     break;
             }

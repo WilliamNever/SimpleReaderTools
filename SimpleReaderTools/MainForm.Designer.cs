@@ -50,6 +50,7 @@
             this.MNITrim = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIToolsWindows = new System.Windows.Forms.ToolStripMenuItem();
             this.MNIShowCharNumber = new System.Windows.Forms.ToolStripMenuItem();
+            this.MNIRandomStringsGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnFontBig = new System.Windows.Forms.Button();
             this.btnFontDefault = new System.Windows.Forms.Button();
             this.btnFontSmall = new System.Windows.Forms.Button();
@@ -62,7 +63,8 @@
             this.tssWinLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssSplitLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssWorkingLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.MNIRandomStringsGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.MNIResetWinNumber = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDeployment.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.sstStatusStrip.SuspendLayout();
@@ -258,7 +260,9 @@
             // 
             this.TSMIToolsWindows.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MNIShowCharNumber,
-            this.MNIRandomStringsGeneratorToolStripMenuItem});
+            this.MNIRandomStringsGeneratorToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.MNIResetWinNumber});
             this.TSMIToolsWindows.Name = "TSMIToolsWindows";
             this.TSMIToolsWindows.Size = new System.Drawing.Size(98, 20);
             this.TSMIToolsWindows.Text = "&Tools Windows";
@@ -270,6 +274,12 @@
             this.MNIShowCharNumber.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.MNIShowCharNumber.Size = new System.Drawing.Size(221, 22);
             this.MNIShowCharNumber.Text = "Show Char Number";
+            // 
+            // MNIRandomStringsGeneratorToolStripMenuItem
+            // 
+            this.MNIRandomStringsGeneratorToolStripMenuItem.Name = "MNIRandomStringsGeneratorToolStripMenuItem";
+            this.MNIRandomStringsGeneratorToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.MNIRandomStringsGeneratorToolStripMenuItem.Text = "Random Strings Generator";
             // 
             // btnFontBig
             // 
@@ -386,11 +396,16 @@
             this.tssWorkingLabel.Name = "tssWorkingLabel";
             this.tssWorkingLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // MNIRandomStringsGeneratorToolStripMenuItem
+            // toolStripSeparator4
             // 
-            this.MNIRandomStringsGeneratorToolStripMenuItem.Name = "MNIRandomStringsGeneratorToolStripMenuItem";
-            this.MNIRandomStringsGeneratorToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.MNIRandomStringsGeneratorToolStripMenuItem.Text = "Random Strings Generator";
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(218, 6);
+            // 
+            // MNIResetWinNumber
+            // 
+            this.MNIResetWinNumber.Name = "MNIResetWinNumber";
+            this.MNIResetWinNumber.Size = new System.Drawing.Size(221, 22);
+            this.MNIResetWinNumber.Text = "Reset Window number";
             // 
             // MainForm
             // 
@@ -450,6 +465,8 @@
         private System.Windows.Forms.ToolStripStatusLabel tssSplitLabel;
         private Components.CutCopyPastControl ctrlCutCpyPst;
         private System.Windows.Forms.ToolStripMenuItem MNIRandomStringsGeneratorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem MNIResetWinNumber;
     }
 }
 

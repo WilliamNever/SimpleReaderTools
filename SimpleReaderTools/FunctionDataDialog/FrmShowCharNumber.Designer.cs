@@ -69,6 +69,7 @@
             // 
             // txtMessageInformation
             // 
+            this.txtMessageInformation.AllowDrop = true;
             this.txtMessageInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -79,6 +80,8 @@
             this.txtMessageInformation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessageInformation.Size = new System.Drawing.Size(776, 311);
             this.txtMessageInformation.TabIndex = 0;
+            this.txtMessageInformation.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtMessageInformation_DragDrop);
+            this.txtMessageInformation.DragEnter += new System.Windows.Forms.DragEventHandler(this.txtMessageInformation_DragEnter);
             // 
             // btnShowCharNumber
             // 

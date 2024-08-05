@@ -4,6 +4,7 @@ using SimpleReaderTools.Core.Enums;
 using SimpleReaderTools.Core.InterFace;
 using SimpleReaderTools.Core.Utilities;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace SimpleReaderTools.FunctionDataDialog
@@ -220,5 +221,15 @@ namespace SimpleReaderTools.FunctionDataDialog
             SetDefaultFont(txtMessageInformation);
         }
         #endregion
+
+        private void txtMessageInformation_DragDrop(object sender, DragEventArgs e)
+        {
+            Control_DragDrop(sender as Control, e);
+        }
+
+        private void txtMessageInformation_DragEnter(object sender, DragEventArgs e)
+        {
+            Control_DragEnter(sender as Control, e);
+        }
     }
 }

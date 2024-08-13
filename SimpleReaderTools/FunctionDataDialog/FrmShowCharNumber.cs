@@ -83,6 +83,9 @@ namespace SimpleReaderTools.FunctionDataDialog
                 case "tsmShowNoFormattedJson":
                     txtMessageInformation.Text = GetFormattedString(txtMessageInformation.Text, EnStringType.Json, false);
                     break;
+                case "tsmXmlToJson":
+                    txtMessageInformation.Text = JsonOperations.SerializeXmlNode(XMLOperations.GetXmlDoc(txtMessageInformation.Text));
+                    break;
                 case "tsmOrderJsonProperties":
                     txtMessageInformation.Text = OrderByFormatStringProperties(txtMessageInformation.Text, EnStringType.Json, true);
                     break;
@@ -92,6 +95,9 @@ namespace SimpleReaderTools.FunctionDataDialog
                     break;
                 case "tsmShowNoFormattedXml":
                     txtMessageInformation.Text = GetFormattedString(txtMessageInformation.Text, EnStringType.Xml, false);
+                    break;
+                case "tsmJsonToXml":
+                    txtMessageInformation.Text = XMLOperations.GetXmlFormatString(XMLOperations.DeserializeXmlNode(txtMessageInformation.Text), true);
                     break;
                 case "tsmOrderXmlNodes":
                     txtMessageInformation.Text = OrderByFormatStringProperties(txtMessageInformation.Text, EnStringType.Xml, true);

@@ -1,5 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
+using SimpleReaderTools.Core.Utilities;
 using System;
+using System.IO;
+using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace TestProject
 {
@@ -22,6 +28,38 @@ namespace TestProject
             var str = SimpleReaderTools.Core.Utilities.XMLOperations.GetOrderedNodesXmlString(xml, true);
             var str1 = SimpleReaderTools.Core.Utilities.XMLOperations.GetXmlString(xml, true);
             var str2 = SimpleReaderTools.Core.Utilities.XMLOperations.GetOrderedNodesXmlString(xml, false);
+        }
+
+        [TestMethod]
+        public void JsToXml()
+        {
+            var json = "{aobj:{aa:1,bb:3},nc:32}";
+            var jObj = Newtonsoft.Json.Linq.JObject.Parse(json);
+            var xml = JsonConvert.DeserializeXmlNode(json,"root");
+            var xmlString = GetXmlFormatString(xml, true);
+            var jsString = JsonConvert.SerializeXmlNode(xml);
+        }
+
+        public static string GetXmlFormatString(XmlDocument doc, bool isFormat)
+        {
+            string result = "";
+
+            XmlWriterSettings wSets = new XmlWriterSettings();
+            wSets.Encoding = Encoding.UTF8;
+            wSets.OmitXmlDeclaration = true;
+            wSets.Indent = isFormat;
+
+            using (System.IO.StringWriter sw = new System.IO.StringWriter())
+            {
+                using (var writer = XmlTextWriter.Create(sw, wSets))
+                {
+                    doc.Save(writer);
+                    writer.Flush();
+                    sw.Flush();
+                    result = sw.ToString();
+                }
+            }
+            return result;
         }
 
         private string GetXml()

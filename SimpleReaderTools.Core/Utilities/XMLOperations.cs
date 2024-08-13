@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,10 @@ namespace SimpleReaderTools.Core.Utilities
 {
     public class XMLOperations
     {
+        public static XmlDocument DeserializeXmlNode(string Json)
+        {
+            return JsonConvert.DeserializeXmlNode(Json, "Root");
+        }
         public static string GetXmlString(string xml, bool isFormat)
         {
             var doc = GetXmlDoc(xml);
@@ -45,19 +50,24 @@ namespace SimpleReaderTools.Core.Utilities
             return nodes;
         }
 
-        private static XmlDocument GetXmlDoc(string xml)
+        public static XmlDocument GetXmlDoc(string xml)
         {
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(xml);
             return doc;
         }
-        private static string GetXmlFormatString(XmlDocument doc, bool isFormat)
+        public static string GetXmlFormatString(XmlDocument doc, bool isFormat)
         {
             string result = "";
+
+            XmlWriterSettings wSets = new XmlWriterSettings();
+            wSets.Encoding = Encoding.UTF8;
+            wSets.OmitXmlDeclaration = true;
+            wSets.Indent = isFormat;
+
             using (System.IO.StringWriter sw = new System.IO.StringWriter())
             {
-                using (XmlTextWriter writer = new XmlTextWriter(sw)
-                { Formatting = isFormat ? Formatting.Indented : Formatting.None })
+                using (var writer = XmlWriter.Create(sw, wSets))
                 {
                     doc.Save(writer);
                     writer.Flush();

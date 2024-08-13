@@ -61,6 +61,8 @@
             this.tsmOrderXmlNodes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSetWinName = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmXmlToJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmJsonToXml = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain.SuspendLayout();
             this.grpFunctionality.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -306,10 +308,12 @@
             this.tsmiTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmShowFormattedJson,
             this.tsmShowNoFormattedJson,
+            this.tsmXmlToJson,
             this.tsmOrderJsonProperties,
             this.toolStripSeparator3,
             this.tsmShowFormattedXml,
             this.tsmShowNoFormattedXml,
+            this.tsmJsonToXml,
             this.tsmOrderXmlNodes});
             this.tsmiTools.Name = "tsmiTools";
             this.tsmiTools.Size = new System.Drawing.Size(46, 20);
@@ -378,6 +382,18 @@
             this.tsmSetWinName.Size = new System.Drawing.Size(172, 22);
             this.tsmSetWinName.Text = "Set Window Name";
             // 
+            // tsmXmlToJson
+            // 
+            this.tsmXmlToJson.Name = "tsmXmlToJson";
+            this.tsmXmlToJson.Size = new System.Drawing.Size(271, 22);
+            this.tsmXmlToJson.Text = "Xml To Json";
+            // 
+            // tsmJsonToXml
+            // 
+            this.tsmJsonToXml.Name = "tsmJsonToXml";
+            this.tsmJsonToXml.Size = new System.Drawing.Size(271, 22);
+            this.tsmJsonToXml.Text = "Json To Xml";
+            // 
             // FrmShowCharNumber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,5 +449,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmSetWinName;
         private Components.CutCopyPastControl ctrlCutCopyPast;
+        private System.Windows.Forms.ToolStripMenuItem tsmXmlToJson;
+        private System.Windows.Forms.ToolStripMenuItem tsmJsonToXml;
     }
 }

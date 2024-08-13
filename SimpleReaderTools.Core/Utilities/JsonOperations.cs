@@ -5,17 +5,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace SimpleReaderTools.Core.Utilities
 {
     public class JsonOperations
     {
-        public static string GetFormattedJson(string text, Formatting formatting)
+        public static string SerializeXmlNode(XmlDocument doc)
+        {
+            return JsonConvert.SerializeXmlNode(doc, Newtonsoft.Json.Formatting.Indented);
+        }
+        public static string GetFormattedJson(string text, Newtonsoft.Json.Formatting formatting)
         {
             return GetFormattedJson(GetDeserialize<object>(text), formatting);
         }
 
-        public static string GetFormattedJson(object obj, Formatting formatting)
+        public static string GetFormattedJson(object obj, Newtonsoft.Json.Formatting formatting)
         {
             return JsonConvert.SerializeObject(obj, formatting);
         }
@@ -25,7 +30,7 @@ namespace SimpleReaderTools.Core.Utilities
             return JsonConvert.DeserializeObject<T>(json);
         }
 
-        public static string JsonPropertiesOrder(string json, Formatting formatting)
+        public static string JsonPropertiesOrder(string json, Newtonsoft.Json.Formatting formatting)
         {
             var jobj = JObject.Parse(json);
             var target = KeySort(jobj);

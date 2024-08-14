@@ -53,6 +53,18 @@ namespace SimpleReaderTools.FunctionDataDialog
 
         private void tsmiFunctions_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            try
+            {
+                MenuDropDownItemClicked(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "Error Message"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void MenuDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
             CloseAllMenu();
             switch (e.ClickedItem.Name)
             {
